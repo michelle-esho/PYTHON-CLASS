@@ -1,0 +1,1187 @@
+# # DATA_FILE = "bank_data.txt"
+# # This stores the name of the file where the bank data will be saved.
+
+# # def load_data():
+# # This creates a function called `load_data()` that will **read the saved information from `bank_data.txt`.
+
+# # try:
+# #     file = open(DATA_FILE, "r")
+# # * `try` means Python will attempt to run the code.
+# # * `"r"` means **read mode**.
+# # * It opens `bank_data.txt` so we can get the saved information.
+
+# # lines = file.readlines()
+# # This reads every line in the file and stores them in a list called `lines`.
+
+# # file.close()
+# # This closes the file after we're finished reading it.
+
+# # name = lines[0].strip()
+# # `lines[0]` means the first line.
+# # `.strip()` removes extra spaces and the newline character `\n`.
+
+# # balance = float(lines[1].strip())
+# # `lines[1]` is the second line, which contains the balance.
+# # `float()` converts it from text into a decimal number.
+
+# # expenses = []
+# # This will store all the user's expenses.
+
+# # for line in lines[2:]:
+# # `lines[2:]` means start from the third line and read everything after it.
+# # Each line represents an expense.
+
+# # description, category, amount = line.strip().split("|")
+
+# # If the line is:
+# # Lunch|Food|3000
+
+# # `.split("|")` separates it into:
+# # "Lunch"
+# # "Food"
+# # "3000"
+
+# # These are stored in:
+# # description
+# # category
+# # amount
+
+# # expenses.append({
+# #     "description": description,
+# #     "category": category,
+# #     "amount": float(amount)
+# # })
+# # This creates a dictionary for each expense.
+
+# # For example:
+# # {
+# #     "description": "Lunch",
+# #     "category": "Food",
+# #     "amount": 3000.0
+# # }
+# # and adds it to the `expenses` list.
+
+# # return name, balance, expenses
+# # The function gives back three things:
+
+# # 1. `name`
+# # 2. `balance`
+# # 3. `expenses`
+
+# # So you could use it like:
+# # name, balance, expenses = load_data()
+
+# # except FileNotFoundError:
+# #     return None, 0, []
+
+# # If `bank_data.txt` doesn't exist, instead of crashing, the program returns:
+# # None
+# # 0
+# # []
+# # Meaning:
+
+# # No name yet
+# # Balance is 0
+# # No expenses
+
+# # except Exception as error:
+# #     print("Error loading data:", error)
+# #     return None, 0, []
+
+# # If another unexpected error happens, it prints the error and returns the same empty/default values.
+
+# # In simple terms
+
+# # The whole function basically says:
+# # "Open my bank data file → read my name → read my balance → read all my expenses → organize them into dictionaries → give all the information back to the program."
+# # 31st Aug
+
+
+# # A variable is a name used to store a value in a program.
+# # Think of it like a labeled container:
+
+# # name = "Michelle"
+# # * `name` → variable
+# # * `"Michelle"` → value
+# # * `=` → assignment operator
+
+# # 20 Examples of Variables
+
+# # Storing a name
+
+# # name = "Michelle"
+# # print(name)
+
+# # Output:
+# # Michelle
+
+# # Storing an age
+# # age = 17
+# # print(age)
+
+# # Storing a height
+# # height = 1.65
+# # print(height)
+
+# # Storing a city
+# # city = "Lagos"
+# # print(city)
+
+# # Storing a school
+# # school = "Koladaisi University"
+# # print(school)
+
+# # Changing a variable
+# # age = 17
+# # age = 18
+# # print(age)
+
+# # Output:
+# # 18
+# # The new value replaces the old one.
+
+# # Multiple variables
+# # name = "Michelle"
+# # age = 17
+# # city = "Lagos"
+
+# # print(name)
+# # print(age)
+# # print(city)
+
+# # Multiple assignment
+
+# # You can assign several variables at once:
+# # name, age, city = "Michelle", 17, "Lagos"
+
+# # print(name)
+# # print(age)
+# # print(city)
+
+# # Same value to multiple variables
+# # a = b = c = 10
+
+# # print(a)
+# # print(b)
+# # print(c)
+
+# # #Variable calculation
+# # price = 500
+# # quantity = 3
+
+# # total = price * quantity
+
+# # print(total)
+
+# # Output:
+# # 1500
+
+# # Adding variables
+# # a = 10
+# # b = 20
+
+# # result = a + b
+
+# # print(result)
+
+# # Using a variable in a sentence
+# # name = "Michelle"
+# # print("My name is", name)
+
+# # f-string
+
+# # name = "Michelle"
+# # age = 17
+
+# # print(f"My name is {name} and I am {age} years old.")
+
+# # Boolean variable
+# # is_student = True
+
+# # print(is_student)
+
+# # Empty variable
+# # You can use `None` when a variable currently has no value.
+
+# # result = None
+
+# # print(result)
+
+# # Variable reassignment
+# # score = 50
+# # print(score)
+
+# # score = 80
+# # print(score)
+
+# # Variable with subtraction
+
+# # money = 5000
+# # spent = 2000
+
+# # balance = money - spent
+
+# # print(balance)
+
+# # Variable with division
+# # money = 10000
+# # people = 4
+
+# # share = money / people
+
+# # print(share)
+
+# # Variable containing a list
+# # fruits = ["apple", "banana", "orange"]
+# # print(fruits)
+
+# # User input stored in a variable
+# # name = input("Enter your name: ")
+# # print(f"Hello {name}")
+
+
+# # A **data type** tells Python what kind of value you're working with.
+# # Some important Python data types are:
+
+# # | Data Type  | Meaning                               | Example                |
+# # | ---------- | ------------------------------------- | ---------------------- |
+# # | `str`      | String/text                           | `"Hello"`              |
+# # | `int`      | Whole number                          | `20`                   |
+# # | `float`    | Decimal number                        | `20.5`                 |
+# # | `bool`     | True/False                            | `True`                 |
+# # | `list`     | Ordered collection                    | `[1, 2, 3]`            |
+# # | `tuple`    | Ordered, unchangeable collection      | `(1, 2, 3)`            |
+# # | `set`      | Unordered collection of unique values | `{1, 2, 3}`            |
+# # | `dict`     | Key-value pairs                       | `{"name": "Michelle"}` |
+# # | `NoneType` | No value                              | `None`                 |
+
+# # 20 Examples of Data Types
+
+# # String
+# # name = "Michelle"
+# # print(name)
+
+# # Integer
+# # age = 17
+# # print(age)
+
+# # Float
+# # price = 1500.50
+# # print(price)
+
+# # Boolean
+# # is_student = True
+
+# # print(is_student)
+
+# # List
+# # fruits = ["apple", "banana", "orange"]
+# # print(type(fruits))
+
+
+# # Tuple
+# # coordinates = (10, 20)
+# # print(coordinates)
+
+# # Set
+# # numbers = {1, 2, 3, 4}
+# # print(numbers)
+
+# # Dictionary
+# # student = {
+# #     "name": "Michelle",
+# #     "age": 17
+# # }
+# # print(student)
+
+# # None
+# # result = None
+
+# # print(result)
+
+# # String containing numbers
+# # number = "100"
+# # print(number)
+
+# # Integer
+# # year = 2026
+
+# # print(year)
+
+# # Negative integer
+# # temperature = -5
+# # print(temperature)
+
+# # Decimal
+# # weight = 60.5
+# # print(weight)
+
+# # Boolean False
+# # logged_in = False
+# # print(logged_in)
+
+# # Empty list
+# # items = []
+# # print(items)
+
+# # Dictionary
+# # person = {
+# #     "name": "Tomi",
+# #     "age": 18,
+# #     "city": "Lagos"
+# # }
+# # print(person)
+
+# # List of numbers
+# # scores = [70, 80, 90, 100]
+
+# # print(scores)
+
+# # Tuple of names
+# # names = ("Tomi", "David", "John")
+
+# # print(names)
+
+# # Set
+# # colors = {"red", "blue", "green"}
+# # print(colors)
+
+# # Checking several types
+# # name = "Michelle"
+# # age = 17
+# # height = 1.65
+# # student = True
+
+# # print(type(name))
+# # print(type(age))
+# # print(type(height))
+# # print(type(student))
+
+# # Operators are symbols or keywords used to perform operations on values.
+
+# # Main categories
+
+# # 1. Arithmetic operators
+# # 2. Assignment operators
+# # 3. Comparison operators
+# # 4. Logical operators
+# # 5. Membership operators
+# # 6. Identity operators
+
+# # Arithmetic operators are used for calculations.
+
+# # | Operator | Meaning           | Example   |
+# # | -------- | ----------------- | --------- |
+# # | `+`      | Addition          | `10 + 5`  |
+# # | `-`      | Subtraction       | `10 - 5`  |
+# # | `*`      | Multiplication    | `10 * 5`  |
+# # | `/`      | Division          | `10 / 5`  |
+# # | `//`     | Floor division    | `10 // 3` |
+# # | `%`      | Modulus/remainder | `10 % 3`  |
+# # | `**`     | Exponent          | `10 ** 2` |
+
+# # 20 Arithmetic Examples
+
+# # Addition
+# # a = 10
+# # b = 5
+# # print(a + b)
+
+# # Subtraction
+# # a = 10
+# # b = 5
+# # print(a - b)`
+
+# # Multiplication
+# # a = 10
+# # b = 5
+# # print(a * b)
+
+# # Division
+# # a = 10
+# # b = 5
+# # print(a / b)
+
+# # Floor division
+# # print(10 // 3)
+
+# # Modulus
+# # print(10 % 3)
+
+# # Exponent
+# # print(2 ** 3)
+
+# # Addition with variables
+# # price = 1000
+# # transport = 500
+
+# # total = price + transport
+# # print(total)
+
+# # Subtracting expenses
+# # money = 10000
+# # expenses = 3500
+
+# # remaining = money - expenses
+# # print(remaining)
+
+# # Multiplication
+# # price = 500
+# # quantity = 4
+
+# # total = price * quantity
+# # print(total)
+
+# # Division
+# # money = 10000
+# # people = 5
+
+# # share = money / people
+# # print(share)
+
+# # Finding a remainder
+# # number = 17
+# # print(number % 2)
+
+# # Checking an even number
+# # number = 20
+# # print(number % 2 == 0)
+
+# # Finding a square
+# # number = 5
+
+# # square = number ** 2
+# # print(square)
+
+# # Finding a cube
+# # number = 3
+
+# # cube = number ** 3
+# # print(cube)
+
+# # Multiple operations
+# # result = 10 + 5 * 2
+# # print(result)
+
+# # Multiplication happens before addition.
+
+# # Using brackets
+# # result = (10 + 5) * 2
+# # print(result)
+
+# # Average
+# # score1 = 70
+# # score2 = 80
+# # score3 = 90
+
+# # average = (score1 + score2 + score3) / 3
+# # print(average)
+
+# # Discount
+# # price = 10000
+# # discount = 2000
+
+# # final_price = price - discount
+# # print(final_price)
+
+# # Simple shopping calculation
+# # rice = 5000
+# # bread = 1500
+# # milk = 2000
+
+# # total = rice + bread + milk
+# # print(total)
+
+
+# # Assignment operators are used to assign or update values.
+
+# # 20 Examples
+
+# # 1.
+# # x = 10
+
+# # 2.
+# # x = 10
+# # x += 5
+# # print(x)
+
+# # 3.
+# # x = 10
+# # x -= 3
+# # print(x)
+
+# # 4.
+# # x = 10
+# # x *= 2
+# # print(x)
+
+# # 5.
+# # x = 10
+# # x /= 2
+# # print(x)
+
+# # 6.
+# # x = 10
+# # x //= 3
+# # print(x)
+
+# # 7.
+# # x = 10
+# # x %= 3
+# # print(x)
+
+# # 8.
+# # x = 2
+# # x **= 3
+# # print(x)
+
+# # 9.
+# # balance = 5000
+# # balance += 1000
+# # print(balance)
+
+# # 10.
+# # balance = 5000
+# # balance -= 1000
+# # print(balance)
+
+# # 11.
+# # score = 50
+# # score += 10
+# # score += 20
+# # print(score)
+
+# # 12.
+# # number = 5
+# # number *= 4
+# # print(number)
+
+# # 13.
+# # number = 100
+# # number /= 4
+# # print(number)
+
+# # 14.
+# # number = 20
+# # number //= 3
+# # print(number)
+
+# # 15.
+# # number = 10
+# # number %= 4
+# # print(number)
+
+# # 16.
+# # number = 3
+# # number **= 2
+# # print(number)
+
+# # 17.
+# # age = 17
+# # age += 1
+# # print(age)
+
+# # 18.
+# # money = 10000
+# # money -= 2500
+# # print(money)
+
+# # 19.
+# # items = 5
+# # items *= 2
+# # print(items)
+
+# # 20.
+# # points = 100
+# # points += 50
+# # points -= 20
+# # points *= 2
+# # print(points)
+
+# # Comparison operators compare two values and give you either:
+# # True
+# # or:
+# # False
+
+# # | Operator | Meaning               |
+# # | -------- | --------------------- |
+# # | `==`     | Equal to              |
+# # | `!=`     | Not equal to          |
+# # | `>`      | Greater than          |
+# # | `<`      | Less than             |
+# # | `>=`     | Greater than or equal |
+# # | `<=`     | Less than or equal    |
+
+# # 20 Comparison Examples
+
+# # 1.
+# # print(10 == 10)
+# # `True`
+
+# # 2.
+# # print(10 == 5)
+# # `False`
+
+# # 3.
+# # print(10 != 5)
+# # `True`
+
+# # 4.
+# # print(10 > 5)
+# # `True`
+
+# # 5.
+# # print(5 > 10)
+# # `False`
+
+# # 6.
+# # print(5 < 10)
+# # `True`
+
+# # 7.
+# # print(10 < 5)
+# # `False`
+
+# # 8.
+# # print(10 >= 10)
+# # `True`
+
+# # 9.
+# # print(10 <= 10)
+# # `True`
+
+# # 10.
+# # age = 17
+
+# # print(age >= 18)
+
+# # 11.
+# # score = 80
+
+# # print(score >= 50)
+
+# # 12.
+# # password = "1234"
+# # print(password == "1234")
+
+# # 13.
+# # name = "Michelle"
+# # print(name == "Michelle")
+
+# # 14.
+# # price = 5000
+# # print(price != 3000)
+
+# # 15.
+# # balance = 10000
+# # print(balance > 5000)
+
+# # 16.
+# # temperature = 30
+# # print(temperature < 40)
+
+# # 17.
+# # number = 20
+# # print(number % 2 == 0)
+
+# # 18.
+# # age = 17
+# # print(age < 13)
+
+# # 19.
+# # score = 100
+# # print(score <= 100)
+
+# # 20.
+# # x = 50
+# # y = 100
+
+# # print(x < y)
+
+# # Logical operators allow you to combine conditions.
+
+# # There are three main ones:
+# # and
+# # or
+# # not
+
+# # `and`
+
+# # Both conditions must be `True`.
+# # age = 20
+# # has_id = True
+# # print(age >= 18 and has_id)
+
+# # `or`
+# # At least one condition must be `True`.
+
+# # day = "Saturday"
+# # print(day == "Saturday" or day == "Sunday")
+
+
+# # `not`
+# # Reverses the result.
+
+# # is_raining = False
+# # print(not is_raining)
+
+# # 20 Logical Operator Examples
+# # print(True and True)
+
+# # print(True and False)
+
+# # print(True or False)
+
+# # print(False or False)
+
+# # print(not True)
+
+# # print(not False)
+
+# # age = 20
+# # print(age >= 18 and age <= 30)
+
+# # score = 80
+# # print(score >= 50 and score <= 100)
+
+# # day = "Saturday"
+# # print(day == "Saturday" or day == "Sunday")
+
+# # is_student = True
+# # print(not is_student)
+
+# # age = 17
+# # has_permission = True
+
+# # print(age < 18 and has_permission)
+
+# # username = "admin"
+# # password = "1234"
+
+# # print(username == "admin" and password == "1234")
+
+# # temperature = 35
+
+# # print(temperature > 30 or temperature < 10)
+
+# # age = 20
+
+# # print(age < 13 or age > 18)
+
+# # score = 40
+
+# # print(not score >= 50)
+
+# # money = 5000
+# # price = 3000
+
+# # print(money >= price and price > 0)
+
+# # name = "Michelle"
+
+# # print(name == "Michelle" or name == "Tomi")
+
+# # number = 10
+
+# # print(number > 5 and number != 20)
+
+# # logged_in = False
+
+# # print(not logged_in)
+
+# # age = 17
+# # student = True
+
+# # print(age < 18 and student == True)
+
+# # Casting means changing a value from one data type to another.
+
+# # For example:
+# # age = "17"
+
+# # This is a string.
+
+# # We can convert it into an integer:
+
+# # age = int("17")
+
+
+# # Now:
+# # 17
+
+# # is an integer.
+
+# # Main Casting Functions
+
+# # `int()`
+
+# # Converts something to an integer.
+# # int("20")
+
+# # `float()`
+# # Converts something to a decimal number.
+# # float("20.5")
+
+# # `str()`
+# # Converts something to a string.
+# # str(20)
+
+# # `bool()`
+# # Converts something to a Boolean.
+# # bool(1)
+
+# # 20 Casting Examples
+
+# # String to integer
+# # age = "17"
+# # age = int(age)
+
+# # print(age)
+# # print(type(age))
+
+
+# # Integer to float
+# # number = 10
+# # number = float(number)
+# # print(number)
+
+# # Integer to string
+# # age = 17
+# # age = str(age)
+
+# # print(age)
+# # print(type(age))
+
+# # Float to integer
+# # price = 25.8
+# # price = int(price)
+# # print(price)
+
+# # String to float
+# # price = "1500.50"
+# # price = float(price)
+# # print(price)
+
+# # Float to string
+# # height = 1.65
+# # height = str(height)
+# # print(height)
+# # print(type(height))
+
+# # Integer to Boolean
+# # number = 1
+# # result = bool(number)
+# # print(result)
+
+# # Zero to Boolean
+# # number = 0
+# # print(bool(number))
+
+# # Non-empty string to Boolean
+# # name = "Michelle"
+# # print(bool(name))
+
+# # Empty string to Boolean
+# # name = ""
+# # print(bool(name))
+
+# # User input to integer
+# # `input()` always gives you a string.
+# # age = input("Enter your age: ")
+# # age = int(age)
+# # print(age + 1)
+
+# # If you enter:
+# # 17
+
+# # Python can calculate:
+# # 18
+
+# # User input to float
+# # price = input("Enter the price: ")
+# # price = float(price)
+# # print(price)
+
+# #  Integer to string for joining
+# # age = 17
+# # message = "I am " + str(age) + " years old."
+# # print(message)
+
+# # String to integer calculation
+# # num1 = "10"
+# # num2 = "20"
+
+# # result = int(num1) + int(num2)
+# # print(result)
+
+# # String to float calculation
+# # price1 = "100.50"
+# # price2 = "50.25"
+
+# # total = float(price1) + float(price2)
+# # print(total)
+
+# # Integer to float calculation
+# # money = 1000
+# # money = float(money)
+# # print(money)
+
+# # Float to integer
+# # number = 15.99
+# # whole_number = int(number)
+# # print(whole_number)
+
+# # Boolean to integer
+# # print(int(True))
+# # print(int(False))
+
+# # In Python:
+# # True = 1
+# # False = 0
+
+# # when converted to integers.
+
+# # Integer to string
+# # number = 100
+# # text = str(number)
+# # print(text)
+# # print(type(text))
+
+# # Complete casting example
+# # name = input("Enter your name: ")
+# # age = input("Enter your age: ")
+# # height = input("Enter your height: ")
+# # age = int(age)
+# # height = float(height)
+# # print(f"Name: {name}")
+# # print(f"Age: {age}")
+# # print(f"Height: {height}")
+
+
+
+def save_data(name, balance, expenses):
+
+
+`def` means **define a function**.
+`save_data` is the **name of the function**.
+`name`, `balance`, and `expenses` are **parameters**.
+They are the information the function needs in order to save the user's data.
+
+
+`try` tells Python:
+
+> "Try to execute this code, but if something goes wrong, don't crash the whole program. Handle the error."
+
+This is useful when working with files because things can go wrong, such as the file not being accessible.
+
+
+with open(DATA_FILE, "w") as file:
+
+This line opens the file where we want to save the data.
+
+`open()` is a Python function used to open a file.
+
+`DATA_FILE`
+This is the variable containing the name/location of the file.
+
+`"w"` means **write mode**.
+It means we want to write new information into the file.
+Write mode can replace the existing contents of the file.
+
+`as file`
+This gives the opened file a temporary name: `file`.
+
+So we can do:
+file.write(...)
+to put information into it.
+
+`with` makes Python automatically close the file when we're finished with it.
+So you don't need:
+file.close()
+
+`file.write(name + "\n")`
+This writes the user's **name** into the file.
+
+`\n` means **new line**.
+So:
+name + "\n"
+means:
+Timi
+and then move to the next line.
+
+`file.write(str(balance) + "\n")`
+This saves the user's **balance**.
+
+The important part is:
+str(balance)
+
+`str()` converts something into a **string/text**.
+
+`for expense in expenses:`
+This is a for loop.
+It means:
+
+> "Go through every expense inside the `expenses` list, one at a time."
+
+`file.write(...)`
+This tells Python:
+
+> "Write the following information into the file."
+Everything inside the brackets is what will be saved.
+
+`f"{expense['description']}|"`
+This is an **f-string**.
+It allows us to put a variable/value directly inside a string.
+
+expense['description']
+gets the description from the expense dictionary.
+
+`f"{expense['category']}|"`
+
+This gets the category of the expense.
+
+`f"{expense['amount']}\n"`
+
+This gets the amount spent.
+
+The `|` separates the different pieces of information.
+
+Instead of saving:
+Lunch Food 2000
+
+we save:
+Lunch|Food|2000
+
+This makes it easier for your program to separate them later.
+
+`print("Data saved successfully.")`
+
+After everything has been written successfully, Python displays:
+Data saved successfully.
+
+This lets the user know that their information has been saved.
+
+`except Exception as error:`
+This handles errors.
+If something goes wrong inside the `try` section, Python comes here.
+
+`Exception` means a general error.
+
+`as error` stores the actual error message inside a variable called `error`.
+
+`print("Error saving data:", error)`
+If something goes wrong, the program prints
+Error saving data: [the actual error]
+
+
+`def create_account():`
+
+* `def` means **define a function**.
+* `create_account` is the **name of the function**.
+* `()` means this function doesn't require any information to be given to it when it starts.
+* `:` means the code belonging to the function comes underneath it.
+
+So this line basically says:
+
+> "Create a function called `create_account`."
+
+`print("\n===== CREATE ACCOUNT =====")`
+
+`print()` displays something on the screen.
+
+The text:
+===== CREATE ACCOUNT =====
+is simply a heading to make the program look organized.
+
+The `\n` means new line.
+So it leaves a blank line before displaying the heading.
+
+`name = input("Enter your name: ")`
+This asks the user to enter their name.
+
+`input()` allows the user to type something.
+
+`while True:`
+This creates a loop.
+
+`while` means:
+"Keep doing something as long as a condition is true."
+
+`True` is always true, so this creates a loop that keeps running until something stops it.
+
+In this function, the loop is useful because we want to keep asking for the balance if the user enters something invalid.
+
+`try` tells Python:
+"Try to run this code. If an error happens, handle it instead of crashing."
+
+We're using it because the user might enter something that can't be converted into a number.
+
+`balance = float(input("Enter starting balance: "))`
+This line does two things.
+
+input("Enter starting balance: ")
+asks the user to enter their starting balance.
+
+`if balance < 0:`
+This checks whether the balance is less than zero.
+
+`print("Balance cannot be negative.")`
+If the user enters a negative number, this message is displayed:
+Balance cannot be negative.
+
+It's telling the user that they need to enter zero or a positive amount.
+
+`continue` tells the loop:
+> "Stop this current attempt and go back to the beginning of the loop."
+
+balance = float(input("Enter starting balance: "))
+and asks again.
+
+So:
+Enter balance: -5000
+        ↓
+Balance cannot be negative.
+        ↓
+continue
+        ↓
+Ask for balance again
+
+
+`return name, balance`
+`return` sends information **out of the function**.
+
+The function has collected two things:
+name
+balance
+
+So it returns both of them.
+
+`except ValueError:`
+This works together with `try`.
+
+Remember:
+float(input(...))
+
+is trying to convert the user's input into a number.
+
+If the user enters:
+abc
+
+Python can't turn `"abc"` into a `float`.
+
+That produces a `ValueError`.
+
+The `except ValueError` says:
+
+> "If converting the input to a number causes a ValueError, do this instead."
+
+`print("Please enter a valid amount.")`
+If the user enters something like:
+hello
+
+the program won't crash.
+
+Instead, it says:
+Please enter a valid amount.
+
+Then because we're inside `while True`, the loop starts again and asks for the balance.
