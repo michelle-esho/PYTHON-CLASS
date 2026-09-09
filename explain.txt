@@ -1185,3 +1185,323 @@ Instead, it says:
 Please enter a valid amount.
 
 Then because we're inside `while True`, the loop starts again and asks for the balance.
+
+
+def check_balance(balance):
+
+`def` means **define a function**.
+
+You are creating a function that Python can use later.
+
+### `check_balance`
+
+This is the **name of the function**.
+
+The function's job is to display the user's current balance.
+
+### `(balance)`
+
+`balance` is a **parameter**. It receives the balance value when the function is called.
+
+print(f"\nCurrent Balance: ₦{balance:,.2f}")
+
+This line displays the user's balance on the screen.
+
+`print()` is used to **display something on the screen**.
+
+The `f` means this is an **f-string**.
+
+An f-string allows you to put variables directly inside text using curly brackets:
+{balance}
+
+\n
+This means **start on a new line**.
+So before displaying the balance, Python leaves a line break.
+
+`Current Balance:`
+This is just normal text that will be displayed to the user.
+
+`₦`
+This is the **Naira symbol**, so the balance will be displayed as Nigerian currency.
+
+ `{balance:,.2f}`
+This is the most important part 😭. It formats the balance nicely.
+
+`balance`
+This is the value you want to display.
+
+`,`
+The comma adds **thousand separators**.
+Instead of:
+50000
+
+you get:
+50,000
+
+`.2f`
+This means display the number as a **decimal/float with exactly 2 decimal places**.
+
+
+def deposit(balance):
+
+`def` means **define a function**.
+
+We're creating a function called `deposit`.
+
+`deposit`
+This is the **name of the function**.
+It tells us what the function is going to do: deposit money.
+
+`balance` is a **parameter**.
+It represents the user's current account balance.
+
+`:`
+The colon means the code belonging to the function comes underneath and must be indented.
+
+`try` tells Python:
+
+"Try to execute this code, and if an error happens, handle it instead of crashing."
+We're using it because the user might enter something that isn't a valid number.
+
+`amount = float(input(...))`
+This line does **three things**.
+
+`input()`
+input("Enter amount to deposit: ₦")
+asks the user how much they want to deposit.
+
+`float()`
+float(...)
+converts the input into a number that can contain decimals.
+
+So:
+"5000"
+
+becomes:
+5000.0
+
+This is useful because someone could enter:
+5000.50
+and Python can handle it.
+
+`amount =`
+stores the converted number inside a variable called `amount`.
+
+So if the user enters ₦5,000:
+amount = 5000.0
+
+`if amount <= 0:`
+This checks whether the amount the user entered is **zero or negative**.
+
+`<=` means **less than or equal to**.
+
+So it's checking:
+
+> "Is the amount less than or equal to zero?"
+
+`print("Amount must be greater than zero.")`
+
+If the user enters:
+0
+
+or:
+-500
+the program displays:
+Amount must be greater than zero.
+
+It's telling them that they need to enter a positive amount.
+
+`return balance`
+This is important.
+
+`return` sends a value **back out of the function** and also **ends the function at that point**.
+
+Think of `return` as:
+> "We're done here. Give this value back."
+
+`balance += amount`
+This is a shorter way of writing:
+balance = balance + amount
+
+It adds the deposited amount to the current balance.
+
+Remember:
+balance += amount
+
+means:
+
+> **Current balance + deposited amount = new balance**
+
+`print(f"₦{amount:,.2f} deposited successfully.")`
+This tells the user that the deposit worked.
+
+The `f` means it's an **f-string**, which allows us to insert the value of `amount` into the message.
+
+The:
+{amount:,.2f}
+
+formats the number.
+
+* `amount` → the amount deposited
+* `,` → adds commas
+* `.2f` → shows 2 decimal places
+
+So if:
+amount = 5000
+
+the output is:
+₦5,000.00 deposited successfully.
+
+`except ValueError:`
+
+This handles a specific error called a **ValueError**.
+
+`print("Invalid amount.")`
+If the user enters something that isn't a valid number, the program displays:
+Invalid amount.
+
+
+`def withdraw(balance):`
+
+`def`
+Means **define a function**.
+
+`withdraw`
+This is the name of the function.
+It tells us that this function is responsible for withdrawing money.
+
+`balance`
+This is a **parameter**.
+It represents the user's current balance.
+
+`try:`
+This tells Python:
+"Try to run this code, and if an error occurs, handle it."
+
+We need this because the user might type something that isn't a number.
+
+`amount = float(input(...))`
+This does **three things**.
+
+`input()`
+input("Enter amount to withdraw: ₦")
+asks the user how much they want to withdraw.
+
+`float()`
+The user's input initially comes in as **text**.
+
+So:
+"5000"
+is converted into:
+5000.0
+using `float()`.
+
+`amount =`
+The resulting number is stored in the variable `amount`.
+
+So if the user enters ₦5,000:
+amount = 5000.0
+
+`if amount <= 0:`
+This checks whether the withdrawal amount is **zero or negative**.
+
+`<=` means:
+**less than or equal to**
+
+So Python is asking:
+"Is the amount less than or equal to zero?"
+
+`print("Amount must be greater than zero.")`
+
+If the user enters `0` or a negative number, the program displays:
+Amount must be greater than zero.
+It prevents an invalid withdrawal.
+
+`elif amount > balance:`
+This is the **second check**.
+`elif` means:
+
+**else if**
+So Python first checks the `if`.
+If that wasn't true, it checks the `elif`.
+
+Here it's asking:
+"Is the amount the user wants to withdraw greater than their current balance?"
+
+`print("Insufficient balance.")`
+
+If the withdrawal amount is greater than the balance, the program says:
+Insufficient balance.
+
+It means:
+> "You don't have enough money in your account to withdraw that amount."
+The balance isn't changed.
+
+`else` means:
+> "If none of the conditions above were true, do this."
+
+So we know:
+* The amount is **not zero or negative** ✅
+* The amount is **not greater than the balance** ✅
+Therefore, the withdrawal is valid.
+
+`balance -= amount`
+This subtracts the withdrawal amount from the balance.
+
+It's a shorter way of writing:
+balance = balance - amount
+
+Remember:
+For **deposit**:
+balance += amount
+
+means:
+balance + amount
+
+For **withdrawal**:
+balance -= amount
+
+means:
+> balance - amount
+
+`print(f"₦{amount:,.2f} withdrawn successfully.")`
+This tells the user that their withdrawal worked.
+
+The `f` makes it an **f-string**, allowing us to put `amount` inside the text.
+{amount:,.2f}
+
+formats the number.
+
+* `amount` → amount withdrawn
+* `,` → adds commas
+* `.2f` → shows 2 decimal places
+
+So if:
+amount = 5000
+
+the output is:
+₦5,000.00 withdrawn successfully.
+
+`except ValueError:`
+This catches a **ValueError**.
+
+Remember this:
+float(input(...))
+
+If the user enters:
+hello
+
+Python tries:
+float("hello")
+
+It can't convert `"hello"` to a number, so Python gets a `ValueError`.
+
+The `except` catches it instead of letting the program crash.
+
+`print("Invalid amount.")`
+This tells the user that what they entered isn't a valid number.
+
+`return balance`
+This sends the **balance back out of the function**.
+
+This is especially important because the balance might have changed.
