@@ -1505,3 +1505,192 @@ This tells the user that what they entered isn't a valid number.
 This sends the **balance back out of the function**.
 
 This is especially important because the balance might have changed.
+
+
+`def add_expense(expenses, balance):`
+
+This defines a function called `add_expense`.
+The function takes two parameters:
+`expenses`
+This represents the list where all the user's expenses are stored.
+
+add_expense(expenses, balance)
+the function receives both the expense list and the current balance.
+
+`try:`
+This tells Python:
+"Try to run this code, and if an error occurs, handle it."
+We're mainly using it because the user has to enter an amount, and that amount needs to be converted to a number.
+
+`description = input(...)`
+This asks the user to describe what they spent money on.
+
+`category = input(...)`
+This asks the user what **category** the expense belongs to.
+
+`amount = float(input(...))`
+This asks the user how much they spent.
+
+`if amount <= 0:`
+This checks whether the expense amount is zero or negative.
+`<=` means **less than or equal to**.
+
+So Python is asking:
+"Is the amount zero or less?"
+
+`print("Amount must be greater than zero.")`
+If the user enters `0` or a negative number, the program displays:
+Amount must be greater than zero.
+
+`return balance`
+
+Your code has:
+if amount <= 0:
+    print("Amount must be greater than zero.")
+
+return balance
+
+This is a problem.
+
+Because `return balance` is not indented under the `if`, Python will execute it **every time**, regardless of whether the amount is valid.
+
+So even if the user enters:
+Amount: ₦2500
+
+Python will eventually reach:
+return balance
+
+and leave the function immediately.
+
+That means the rest of your code won't run.
+
+It won't get to:
+if amount > balance:
+
+or:
+
+expenses.append(expense)
+
+or:
+
+balance -= amount
+
+It should be:
+if amount <= 0:
+    print("Amount must be greater than zero.")
+    return balance
+
+Now `return balance` only happens when the amount is invalid.
+
+`if amount > balance:`
+
+This checks whether the expense is **greater than the user's available balance**.
+
+`print("Not enough balance.")`
+
+If the expense is greater than the available balance, the program says:
+Not enough balance.
+
+`return balance`
+
+This returns the current balance without changing it.
+
+`expense = {`
+
+Now we're creating a **dictionary** called `expense`.
+
+The dictionary will contain information about the expense.
+
+Think of it as creating a little record/card for one expense.
+
+`"description": description`
+
+This stores the description.
+
+The first `description` is the **dictionary key**.
+
+The second `description` is the **variable** containing what the user entered.
+
+For example, if the user entered:
+Lunch
+
+we get:
+"description": "Lunch"
+
+`"category": category`
+
+This stores the category.
+
+`"amount": amount`
+
+This stores the amount spent.
+
+`expenses.append(expense)`
+This is where the new expense gets added to the expenses list.
+
+`append()` means:
+
+**Add something to the end of a list.**
+
+For example, before:
+expenses = []
+
+After:
+expenses.append(expense)
+
+the list becomes:
+[
+    {
+        "description": "Lunch",
+        "category": "Food",
+        "amount": 2500
+    }
+]
+
+If there were already expenses, the new one would simply be added to the end.
+
+`balance -= amount`
+This subtracts the expense from the balance.
+
+It's the same as:
+balance = balance - amount
+
+For example:
+Balance = ₦50,000
+Expense = ₦2,500
+
+After:
+balance -= amount
+
+the balance becomes:
+₦47,500
+
+`print("Expense added successfully.")`
+This tells the user that the expense was successfully added.
+
+They'll see:
+Expense added successfully.
+
+`except ValueError:`
+This catches a **ValueError**.
+
+Remember this line:
+amount = float(input("Amount: ₦"))
+
+If the user enters:
+Amount: ₦hello
+
+Python tries:
+float("hello")
+
+It can't convert `"hello"` into a number, so it produces a `ValueError`.
+
+The `except` catches it.
+
+`print("Invalid amount.")`
+
+Instead of crashing, the program tells the user:
+Invalid amount.
+
+`return balance`
+This returns the current balance if an invalid amount was entered.

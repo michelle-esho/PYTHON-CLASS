@@ -97,3 +97,33 @@ def withdraw(balance):
         return balance  
 
 
+def add_expense(expenses, balance):
+    try:
+        description = input("Expense description: ")
+        category = input("Category: ")
+        amount = float(input("Amount: ₦"))
+
+        if amount <= 0:
+            print("Amount must be greater than zero.")
+            return balance
+
+        if amount > balance:
+            print("Not enough balance.")
+            return balance
+
+        expense = {
+            "description": description,
+            "category": category,
+            "amount": amount
+        }
+
+        expenses.append(expense)
+
+        balance -= amount
+
+        print("Expense added successfully.")
+
+    except ValueError:
+        print("Invalid amount.")
+
+    return balance
