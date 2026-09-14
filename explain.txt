@@ -1694,3 +1694,465 @@ Invalid amount.
 
 `return balance`
 This returns the current balance if an invalid amount was entered.
+
+
+`def view_expenses(expenses):`
+This **defines a function** called `view_expenses`.
+
+`def` means **define a function**.
+
+`view_expenses`
+This is the name of the function.
+
+The name tells us what the function does: **view/display expenses**.
+
+`expenses`
+This is a parameter.
+It represents the list containing all the expenses.
+
+
+
+When you call:
+view_expenses(expenses)
+the function receives that list.
+
+`if not expenses:`
+This checks whether the `expenses` list is empty.
+`not` means basically **the opposite of**.
+
+So:
+if not expenses:
+can be understood as:
+"If there are no expenses..."
+
+`print("\nNo expenses recorded.")`
+
+If there are no expenses, the program displays:
+No expenses recorded.
+
+The `\n` creates a new line before the message.
+
+`return`
+This stops the function immediately.
+This is important because if there are no expenses, there is **nothing to display**.
+
+So:
+No expenses recorded.
+       ↓
+    return
+       ↓
+Stop the function
+
+It doesn't need to continue to the `for` loop.
+
+### Notice the difference
+
+`print("\n===== ALL EXPENSES =====")`
+This displays a heading before showing the expenses.
+
+The output will look like:
+===== ALL EXPENSES =====
+
+Again, `\n` gives us a new line before the heading.
+
+`for index, expense in enumerate(expenses, start=1):`
+This is the most important line in this function.
+It's a `for` loop combined with `enumerate()`.
+
+`for` creates a loop.
+It allows Python to go through the expenses **one at a time**.
+
+`enumerate(expenses, start=1)`
+
+`enumerate()` gives us two things for each expense:
+
+1. The position/number of the expense
+2. The actual expense itself
+
+`start=1` tells Python:
+Start counting from 1 instead of 0.
+
+`expense`
+stores the actual expense dictionary.
+
+`print(f"\nExpense {index}")`
+This displays the number of the expense.
+Remember that `index` comes from `enumerate()`.
+
+If we're looking at the first expense:
+index = 1
+
+So it prints:
+Expense 1
+
+For the second:
+Expense 2
+
+And so on.
+
+The `f` makes this an **f-string**, allowing us to put `{index}` directly inside the text.
+
+`print(f"Description : {expense['description']}")`
+This displays the description of the expense.
+
+Remember that each expense is a dictionary.
+
+For example:
+expense = {
+    "description": "Lunch",
+    "category": "Food",
+    "amount": 2500
+}
+
+To get the description, we use:
+expense['description']
+
+which gives:
+Lunch
+
+So the output becomes:
+Description : Lunch
+
+`print(f"Category : {expense['category']}")`
+This displays the expense category.
+
+`print(f"Amount : ₦{expense['amount']:,.2f}")`
+This displays the amount spent.
+
+expense['amount']
+gets the amount from the dictionary.
+
+If:
+expense = {
+    "description": "Lunch",
+    "category": "Food",
+    "amount": 2500
+}
+
+then:
+expense['amount']
+
+gives:
+2500
+
+Then:
+:,.2f
+formats the number.
+
+* `,` → adds commas
+* `.2f` → shows exactly 2 decimal places
+
+So:
+2500
+
+becomes:
+2,500.00
+
+And the final output is:
+Amount : ₦2,500.00
+
+
+`def search_expense(expenses):`
+
+ `def` means **define a function**.
+ `search_expense` is the **name of the function**.
+ `expenses` is the **parameter**.
+
+The function receives the list of expenses so it can search through them.
+
+Getting the search keyword
+
+keyword = input("Enter expense name to search: ").lower()
+
+This line does two things.
+
+`input()`
+
+input("Enter expense name to search: ")
+It asks the user to enter what they want to search for.
+
+`found = False`
+This creates a flag.
+
+A flag is simply a variable that keeps track of whether something has happened.
+
+Here:
+found = False
+
+means:
+
+We haven't found an expense yet.
+
+Think of it like:
+found = No
+
+If we find an expense later, we change it to:
+found = True
+
+which means:
+found = Yes
+
+This is a very common programming technique.
+
+Loop through the expenses
+
+for expense in expenses:
+This means:
+Go through each expense in the `expenses` list one by one.
+
+Check whether the keyword is inside the description
+
+if keyword in expense["description"].lower():
+This is probably the most important line.
+
+Let's break it down.
+
+`expense["description"]`
+
+Remember that each expense is a dictionary:
+{
+    "description": "Lunch",
+    "category": "Food",
+    "amount": 2500
+}
+
+So:
+expense["description"]
+
+gets:
+Lunch
+
+`.lower()`
+
+expense["description"].lower()
+
+changes:
+Lunch
+
+to:
+lunch
+
+`keyword in`
+
+Suppose the user searched:
+lunch
+
+Python checks:
+"lunch" in "lunch"
+
+That's `True`.
+
+It can also search for part of a word.
+
+Print "Expense Found"
+
+print("\nExpense Found")
+
+If the keyword matches an expense, this prints:
+Expense Found
+
+The `\n` means **start on a new line**.
+
+Print the description
+
+print(f"Description : {expense['description']}")
+This displays the expense description.
+
+The `f` means this is an f-string.
+It allows us to put variables inside `{ }`.
+
+{expense['description']}
+gets the description from the dictionary.
+
+Print the category
+
+print(f"Category : {expense['category']}")
+This gets the category from the dictionary.
+
+Print the amount
+
+print(f"Amount : ₦{expense['amount']:,.2f}")
+This displays the amount.
+
+Suppose:
+expense["amount"] = 2500
+
+The output becomes:
+Amount : ₦2,500.00
+
+Let's understand:
+
+`expense['amount']`
+
+Gets the amount:
+2500
+
+`:,`
+
+Adds commas:
+2500
+
+becomes:
+2,500
+
+`.2f`
+
+Shows 2 decimal places:
+2,500.00
+
+So:
+:,.2f
+
+is basically telling Python:
+
+Format this number with commas and two decimal places.
+
+`found = True`
+This is very important.
+
+Remember we started with:
+found = False
+
+meaning:
+Nothing has been found yet.
+
+Once we find a matching expense:
+found = True
+
+means:
+Yes! We found one.
+
+So the variable changes:
+False → True
+
+
+def expense_summary(expenses):
+
+* `def` means **define a function**.
+* `expense_summary` is the function's name.
+* `expenses` is the parameter.
+
+The function receives the user's list of expenses.
+
+if not expenses:
+This checks whether the `expenses` list is empty.
+
+Remember:
+not
+
+means the opposite.
+
+So:
+if not expenses:
+
+basically means:
+If there are no expenses...
+
+print("No expenses available.")
+If the list is empty, this displays:
+No expenses available.
+
+return
+This tells Python:
+Stop running this function.
+
+There is nothing else to calculate because there are no expenses.
+
+So if:
+expenses = []
+
+the function does:
+No expenses available.
+
+and stops.
+
+summary = {}
+This creates an **empty dictionary** called `summary`.
+
+At this point:
+summary = {}
+
+There is nothing inside it yet.
+
+We are going to use this dictionary to store the total amount spent in each category.
+
+For example, eventually it might become:
+summary = {
+    "Food": 5500,
+    "Transport": 1500,
+    "Education": 3000
+}
+
+This means:
+Food       → ₦5,500
+Transport  → ₦1,500
+Education  → ₦3,000
+
+for expense in expenses:
+This goes through the `expenses` list one expense at a time.
+
+category = expense["category"]
+This gets the `"category"` value from the current expense.
+
+if category in summary:
+
+This asks:
+Does this category already exist inside the `summary` dictionary?
+
+`else`
+This happens when the category doesn't already exist in `summary`.
+
+For example, if:
+summary = {}
+
+and the first expense is:
+Food → ₦2,500
+
+Food isn't inside the dictionary yet.
+
+Therefore the `else` runs.
+
+summary[category] = expense["amount"]
+This creates a new entry in the dictionary.
+
+print("\n===== EXPENSE SUMMARY =====")
+After the loop has finished organizing the expenses, this prints:
+===== EXPENSE SUMMARY =====
+
+The `\n` gives a blank line before the heading.
+
+total = 0
+
+This creates a variable called `total`.
+
+We start it at zero because we haven't added anything yet.
+
+Think:
+total = ₦0
+
+We'll keep adding each category's amount to it.
+
+for category, amount in summary.items():
+This is another `for` loop.
+
+But this time we're going through the summary dictionary.
+
+`.items()`
+`.items()` gives us both:
+
+* the key
+* the value
+
+print(f"{category}: ₦{amount:,.2f}")
+This displays the category and the amount spent.
+
+total += amount
+This adds each category's amount to `total`.
+
+It's the same as:
+total = total + amount
+
+print(f"\nTotal Expenses: ₦{total:,.2f}")
+
+This displays the total amount spent across all categories.
+

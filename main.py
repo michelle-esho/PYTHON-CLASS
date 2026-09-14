@@ -127,3 +127,66 @@ def add_expense(expenses, balance):
         print("Invalid amount.")
 
     return balance
+
+def view_expenses(expenses):
+    if not expenses:
+        print("\nNo expenses recorded.")
+        return
+    print("\n===== ALL EXPENSES =====")
+    for index, expense in enumerate(expenses, start=1):
+        print(f"\nExpense {index}")
+        print(f"Description : {expense['description']}")
+        print(f"Category : {expense['category']}")
+        print(f"Amount : ■{expense['amount']:,.2f}")
+
+
+def search_expense(expenses):
+
+    keyword = input("Enter expense name to search: ").lower()
+
+    found = False
+
+    for expense in expenses:
+
+        if keyword in expense["description"].lower():
+
+            print("\nExpense Found")
+            print(f"Description : {expense['description']}")
+            print(f"Category : {expense['category']}")
+            print(f"Amount : ₦{expense['amount']:,.2f}")
+
+            found = True
+
+    if not found:
+        print("Expense not found.")
+
+
+def expense_summary(expenses):
+
+    if not expenses:
+        print("No expenses available.")
+        return
+
+    summary = {}
+
+    for expense in expenses:
+
+        category = expense["category"]
+
+        if category in summary:
+            summary[category] += expense["amount"]
+
+        else:
+            summary[category] = expense["amount"]
+
+    print("\n===== EXPENSE SUMMARY =====")
+
+    total = 0
+
+    for category, amount in summary.items():
+
+        print(f"{category}: ₦{amount:,.2f}")
+
+        total += amount
+
+    print(f"\nTotal Expenses: ₦{total:,.2f}")
