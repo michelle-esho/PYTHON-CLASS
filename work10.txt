@@ -1,0 +1,936 @@
+SECTION A: VARIABLES
+1. A variable is a name used to store a value in a program.
+
+2. By assigning a value to a name using `=`.
+age = 25
+
+3. No. Variable names cannot start with a number.
+1name = "Max"  # Error
+
+4.  age = 25
+
+5. Create name = "Kelechi"
+name = "Kelechi"
+
+6. Output of `x = 5; y = x; print(y)`**
+5
+
+7. type(variable)
+
+8. `=` assigns a value.
+   `==` compares two values.
+
+9. Yes.
+x = 10
+x = 20
+
+10. Variable assignment is giving a value to a variable using `=`.
+
+11. a, b, c = 1, 2, 3
+
+12. Output
+a, b = 10, 20
+print(a, b)
+
+10 20
+
+13. Swap `a=5, b=10` without a third variable
+a, b = b, a
+
+14. Rules for naming variables
+* Must not start with a number.
+* Can contain letters, numbers and `_`.
+* Cannot contain spaces.
+* Cannot use Python keywords.
+* Variable names are case-sensitive.
+
+15. `my_var` is valid.
+    `my-var` and `my var` are invalid.
+
+16. No. Python is case-sensitive.
+
+17. A constant is a value that is intended not to change. Python does not have truly constant variables; uppercase names are used by convention.
+PI = 3.14
+
+18. Create PI = 3.14
+
+PI = 3.14
+
+19. Output
+x = 10
+x = 20
+print(x)
+
+20
+
+20. How do you delete a variable?
+del x
+
+21. school = "Noun"
+
+22. is_student = True
+
+23. print(name _ 2)
+As written, `_` is not multiplication. If the intended code is name * 2:
+
+name = "Attah"
+print(name * 2)
+Output: AttahAttah
+
+24. Fix 2nd_name = "Maxwell"
+
+second_name = "Maxwell"
+
+25. Fix class = "Python"
+class is a Python keyword.
+
+class_name = "Python"
+
+26. It returns the identity/reference number of an object in memory.
+
+x = 10
+print(id(x))
+
+27. `None` represents the absence of a value.
+
+x = None
+
+28. Same value to 3 variables
+
+x = y = z = "Python"
+
+29. What is dynamic typing?
+Python determines the type of a variable automatically, and its type can change.
+
+x = 10
+x = "Hello"
+
+30. Increase price by 50 using shorthand
+
+price = 100
+price += 50
+
+31. What is snake_case?
+Words are separated using underscores.
+
+student_name = "Max"
+
+32. What is camelCase?
+The first word starts lowercase and subsequent words start with capital letters.
+
+studentName = "Max"
+
+33. Python standard for variables?
+snake_case
+
+34. What happens if `x` was never created?
+
+print(x)
+
+It gives a `NameError`.
+
+35. Variables for full name, age and state
+
+full_name = "Esho Oluwatimilehin"
+age = 20
+state = "Lagos"
+
+36. a = 10
+    b = 20
+    a = b
+    print(a)
+
+Output: 20
+
+37. x = "5"
+    y = "10"
+print(x + y)
+
+Output: 510
+
+38. x = 5
+    y = 10
+print(x + y)
+
+Output: 15
+
+39. a = True
+print(type(a))
+
+Output: <class 'bool'>
+
+40. num = 10
+    num = num + 5
+print(num)
+
+Output: 15
+
+41. a = 5
+    a += 3
+print(a)
+
+Output: 8
+
+42. a = 10
+    b = a
+    b = 20
+print(a)
+
+Output: 10
+
+43. Why does x, y = 5 give an error?
+Because Python expects two values to assign to `x` and `y`, but only one value was provided.
+
+Correct: x, y = 5, 10
+
+44. first_name = "John"
+    last_name = "Doe"
+print(first_name + last_name)
+
+Output: JohnDoe
+
+45. print(first_name + " " + last_name)
+
+Output: John Doe
+
+46. Take user input and store it
+name = input("Enter your name: ")
+
+47. Ask for name and print Hello
+name = input("Enter your name: ")
+print("Hello", name)
+
+48. Local vs global variable
+A local variable is created inside a function and is normally only available there.
+A global variable is created outside a function and can be accessed throughout the program.
+
+49. Program using global
+x = 10
+
+def change():
+    global x
+    x = 20
+
+change()
+print(x)
+
+50. `del` is used to delete a variable or item.
+
+x = 10
+del x
+
+51. Can a variable store a function?
+Yes.
+
+x = print
+x("Hello")
+
+52. What is variable shadowing?
+When a variable in a smaller scope has the same name as a variable in a larger scope.
+
+53. Variable containing an apostrophe
+sentence = "I'm a student"
+
+or
+sentence = 'I\'m a student'
+
+54. How to make a variable value not changeable?
+Python does not provide true constant variables. Uppercase names are used as a convention.
+
+PI = 3.14
+
+55. What is `_` used for?
+It is commonly used for:
+
+* A variable whose value is not important.
+* Loop variables.
+* Separating words in variable names (`student_name`).
+
+56. x = 10
+    y = 20
+x, y = y, x
+print(x, y)
+
+Output:
+20 10
+
+57. Create a = 100 inside and outside a function
+a = 50
+
+def test():
+    a = 100
+    print(a)
+
+test()
+print(a)
+
+Output: 100
+        50
+
+58. Keywords are reserved words with special meanings in Python. They cannot be used as variable names.
+
+59. Five Python keywords
+if
+else
+for
+while
+def
+
+60. type() vs isinstance()
+type() checks the exact type.
+isinstance() checks whether an object belongs to a type or its subclass.
+
+61. my_list = ["John", "Mary", "Max"]
+
+62. data = {"name": "Max", "age": 20}
+
+63. Explain x = y = z = 0
+It assigns `0` to all three variables.
+
+x = 0
+y = 0
+z = 0
+
+64. Unpacking means assigning items from a collection to separate variables.
+
+a, b, c = [1, 2, 3]
+
+The question's `[1][2][3]` is not valid list syntax for three items.
+
+65. a = [1, 2]
+b = a
+b.append(3)
+print(a)
+
+Output:
+[1, 2, 3]
+
+Because `a` and `b` refer to the same list.
+
+66. How to make a copy instead of a reference?
+
+b = a.copy()
+
+67. What is a memory reference?
+It is the reference to the object stored in memory that a variable points to.
+
+68. Print variables created so far
+
+print(globals())
+
+69. x is None vs x == None
+is None checks whether `x` is exactly the `None` object.
+== None checks equality.
+is None is the recommended way to check for None.
+
+70. Phone number: int or string?
+Use a string, because phone numbers are identifiers, not numbers used for calculations. It also preserves leading zeros and symbols.
+
+phone_number = "08012345678"
+
+71. Four main/common data types:
+int, float, str, bool.
+
+72. Three numeric data types:
+int, float, complex.
+
+73. int vs float
+int stores whole numbers.
+float stores decimal numbers.
+
+74. str means string and stores text.
+
+75. What is bool?
+Boolean stores either:
+True
+False
+
+76. 10       # int
+    10.5     # float
+
+77. "10"` → str
+
+78. 'a' → str
+
+79. `True`** → bool
+
+80. [1, 2, 3] → list
+
+81. (1, 2, 3) → tuple
+
+82. {1, 2, 3} → set
+
+83. {"a": 1} → dict
+
+84. None → NoneType
+
+85. Check data type
+type(variable)
+
+86. Convert int 10 to string
+str(10)
+
+87. Convert "10" to int
+int("10")
+
+88. int("hello")
+It produces a ValueError.
+
+89. int(10.5)
+Output: 10
+
+The decimal part is removed; it does not round up.
+
+90. bool(0)
+
+False
+
+91. bool(1)
+
+True
+
+92. bool("")
+
+False
+
+93. str(100) + str(200)
+
+Output: 100200
+
+
+94. int("10.5")
+No. It gives a ValueError.
+Use: int(float("10.5"))
+
+95. Convert list to tuple
+
+tuple(my_list)
+
+96. Three ways to create a string
+"Hello"
+'Hello'
+"""Hello"""
+
+97. Single vs double quotes
+Both create strings. They are mostly interchangeable.
+
+98. Multi-line string
+
+text = """Hello
+How are you?
+Welcome"""
+
+99. len("Python")
+
+6
+
+100. s = "Python"
+s[0]
+
+Output: P
+
+101. Slicing extracts part of a sequence.
+
+s[0:3]
+
+Output: Pyt
+
+102. s[-1]
+
+n
+
+103. "python".upper()`
+
+PYTHON
+
+104. "PYTHON".lower()`
+
+python
+
+105. String concatenation
+Joining strings together.
+
+"Hello" + " World"
+
+106. Can strings be multiplied?
+Yes.
+
+"Hi" * 3
+
+Output: HiHiHi
+
+107. What is an f-string?
+It allows variables to be inserted easily into strings.
+
+name = "Max"
+print(f"Hello {name}")
+
+108. name = "Max"
+     age = 20
+print(f"My name is {name} and I am {age}")
+
+109. What is strip()?
+It removes whitespace from the beginning and end of a string.
+
+" Hello ".strip()
+
+110. Check if "python" is inside "I love python"
+
+"python" in "I love python"
+
+Output: True
+
+111. What is a list? Is it mutable?
+A list is an ordered collection of items. Yes, it is mutable.
+
+112. What is a tuple?
+A tuple is an ordered collection of items. It is immutable.
+
+113. List vs tuple
+Lists are mutable and use `[]`.
+Tuples are immutable and use `()`.
+
+114. What is a dictionary?
+student = {"name": "Max", "age": 20}
+
+It stores data as key-value pairs.
+
+115. What is a set?
+numbers = {1, 2, 3}
+
+A set is an unordered collection of unique values.
+
+116. Can sets have duplicates?
+No.
+
+117. Can lists have different data types?
+Yes.
+
+my_list = [10, "Hello", True]
+
+118. Mutable vs immutable
+Mutable objects can be changed.
+Examples: list, dict.
+
+Immutable objects cannot be changed after creation.
+Examples: int, str.
+
+119. a = [1, 2]
+     a[0] = 99
+print(a)
+
+Output: [99, 2]
+
+120.a = (1, 2)
+    a[0] = 99
+
+It will produce a `TypeError` because tuples cannot be changed.
+
+**121. `[]` → list
+
+**122. `()` → tuple
+
+123. `{}` → dict
+
+124. Empty set
+set()
+
+125. Empty dictionary
+{}
+
+126. type([])  # list
+     type({})  # dict
+
+127. What is indexing?
+Indexing is accessing an individual item using its position. Python starts counting from `0`.
+
+128. len([1, 2, 3, 4])
+
+Output: 4
+
+129. bool([])    # False
+     bool([0])   # True
+
+130. bool("")    # False
+     bool(" ")   # True
+
+131. Check if `x` is an integer
+
+isinstance(x, int)
+
+132. What is complex data type?
+It represents numbers with real and imaginary parts.
+
+x = 3 + 5j
+
+
+133. How many data types can a list hold?
+A list can hold different types at the same time.
+
+134. Convert `[1, 2, 2, 3]` to a set
+
+set([1, 2, 2, 3])
+
+Output: {1, 2, 3}
+
+The duplicate `2` is removed.
+
+135. What is NoneType?
+It is the data type of None.
+
+136. == vs is
+`==` checks whether values are equal.
+`is` checks whether two variables refer to the same object.
+
+137. Input and print its data type
+
+x = input("Enter something: ")
+print(type(x))
+
+Input from input() is normally a string.
+
+138. Create each data type
+a = 10
+b = 10.5
+c = "Hello"
+d = True
+e = [1, 2, 3]
+f = (1, 2, 3)
+g = {"name": "Max"}
+h = {1, 2, 3}
+
+139.type(True)
+
+returns: <class 'bool'>
+
+Yes, `bool` is a subclass of `int`.
+
+140. Why does `0.1 + 0.2 != 0.3`?
+Because floating-point numbers are stored using binary representation, and some decimal numbers cannot be represented exactly. This causes a small rounding difference.
+
+141. Seven arithmetic operators
++   -   *   /   //   %   **
+
+142. `+` — Addition
+5 + 3
+# 8
+
+143. `-` — Subtraction
+5 - 3
+# 2
+
+144. `_` in the question should be `*` — Multiplication
+5 * 3
+# 15
+
+145. `/` — Division
+10 / 2
+# 5.0
+
+It returns a `float`.
+
+146. `//` — Floor division
+10 // 3
+# 3
+
+147. `%` — Modulus/remainder
+10 % 3
+# 1
+
+148. `*` — Multiplication
+2 * 3
+# 6
+
+149. `10 / 3`
+3.3333333333333335
+
+150. `10 // 3`
+3
+
+151. `10 % 3`
+1
+
+152. Operator precedence
+It determines the order in which operations are performed.
+
+`2 + 3 * 4`:
+14
+
+Multiplication happens before addition.
+
+153. `2 * 3 * 2`
+12
+
+The multiplication operations are performed from left to right.
+
+154. Area of rectangle
+length = 10
+width = 5
+area = length * width
+print(area)
+
+Output: 50
+
+155. Simple interest
+
+P = 10000
+R = 5
+T = 2
+
+SI = (P * R * T) / 100
+print(SI)
+
+Output:
+1000.0
+
+156. Six comparison operators
+==   !=   >   <   >=   <=
+
+
+157. `==` — Checks equality.
+5 == 5
+# True
+
+158. `!=` — Not equal.
+5 != 3
+# True
+
+159. `>` and `<`
+`>` means greater than.
+`<` means less than.
+
+160. `>=` and `<=`
+`>=` means greater than or equal to.
+`<=` means less than or equal to.
+
+161. `5 == 5.0`
+True
+
+162. `"5" == 5`
+False
+
+163. `10 > 5`
+True
+
+164. `True == 1`
+True
+
+165. `False == 0`
+True
+
+166. `and`, `or`, `not`
+
+* `and` — both conditions must be true.
+* `or` — at least one condition must be true.
+* `not` — reverses the result.
+
+167. True and False
+# False
+
+168. True or False
+# True
+
+169. not True
+# False
+
+170. 5 > 3 and 10 > 5
+# True
+
+171. 5 > 10 or 10 > 5
+# True
+
+172. Five assignment operators
+=   +=   -=   *=   /=
+
+173. `+=`
+x = 5
+x += 2
+
+Same as:
+x = x + 2
+
+174. `-=`
+x = 5
+x -= 2
+
+Same as:
+x = x - 2
+
+175. `_=` should be `*=`
+`*=` means multiply and assign.
+
+x = 5
+x *= 2
+
+176. `/=`
+x = 10
+x /= 2
+
+177. `x += 1` is the same as
+
+x = x + 1
+
+178. `=` vs `+=`
+`=` assigns a new value.
+`+=` adds to the existing value and assigns the result.
+
+179. What is `in`?
+It checks whether a value exists inside a collection.
+
+3 in [1, 2, 3]
+# True
+
+180. `not in`
+Checks whether a value does not exist.
+
+5 not in [1, 2, 3]
+# True
+
+181. What is `is`?
+It checks whether two variables refer to the same object.
+
+a = None
+a is None
+# True
+
+182. `is` vs `==`
+`==` compares values.
+`is` compares object identity.
+
+183.
+a = [1, 2]
+b = [1, 2]
+
+a == b   # True
+a is b   # False
+
+184. "a" in "apple"
+
+Output: True
+
+185. 3 in [1, 2, 3]
+
+Output: True
+
+186. "key" in {"key": 1}
+
+Output: True
+
+187. Does `in` check values or keys in a dictionary?
+It checks keys.
+
+188. Bitwise `&` and `|`
+They perform operations on binary bits.
+
+5 & 3
+# 1
+
+5 | 3
+# 7
+
+189. Ternary operator
+It is a short way of writing an `if-else` expression.
+
+a = 10 if x > 5 else 20
+
+190. Even/odd using ternary
+
+num = int(input("Enter a number: "))
+result = "Even" if num % 2 == 0 else "Odd"
+print(result)
+
+
+191. Operator chaining
+
+1 < 2 < 3
+
+Output: True
+
+It is equivalent to:
+
+1 < 2 and 2 < 3
+
+192. `10 + 20 * 30 / 10`
+
+70.0
+
+193. How to force precedence?
+Use parentheses:
+
+(2 + 3) * 4
+
+194. Take two numbers and print arithmetic operations
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+print("Modulus:", a % b)
+print("Floor Division:", a // b)
+
+195. Check if age is at least 18
+
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("Age is 18 or above")
+else:
+    print("Age is below 18")
+
+196. Divisible by both 3 and 5
+
+num = int(input("Enter a number: "))
+
+if num % 3 == 0 and num % 5 == 0:
+    print("Divisible by both")
+else:
+    print("Not divisible by both")
+
+197. Check if letter is a vowel
+letter = input("Enter a letter: ")
+
+if letter.lower() in "aeiou":
+    print("Vowel")
+else:
+    print("Not a vowel")
+
+
+198. Double a number 3 times using assignment
+
+num = 5
+
+num *= 2
+num *= 2
+num *= 2
+
+print(num)
+
+Output: 40
+
+199. Explain BODMAS in Python
+BODMAS describes the order of mathematical operations:
+
+* **B** — Brackets `()`
+* **O** — Orders/exponents `**`
+* **D** — Division `/`
+* **M** — Multiplication `*`
+* **A** — Addition `+`
+* **S** — Subtraction `-`
+
+Python also follows precedence rules where multiplication/division are done before addition/subtraction.
+
+200. Small calculator using arithmetic operators
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+print("Floor Division:", a // b)
+print("Modulus:", a % b)
+print("Power:", a ** b)
