@@ -934,3 +934,1096 @@ print("Division:", a / b)
 print("Floor Division:", a // b)
 print("Modulus:", a % b)
 print("Power:", a ** b)
+
+201. Create `user_name`, take input and print in capital letters
+
+user_name = input("Enter your name: ")
+print(user_name.upper())
+
+202. What happens?
+
+x = 10
+del x
+print(x)
+
+It gives a `NameError` because `x` was deleted before it was printed.
+
+203. Can `a = 10` and `b = "10"` be added?
+No.
+
+a = 10
+b = "10"
+
+a + b
+
+This gives a `TypeError` because `a` is an `int` and `b` is a `str`.
+
+204. Swap `a = "Python"` and `b = "Java"` in one line
+
+a = "Python"
+b = "Java"
+
+a, b = b, a
+
+205. Output
+
+a, b, c = 5, 10, 15
+print(a + b + c)
+
+Output: 30
+
+206. Find the memory address of `x = 50`
+
+x = 50
+print(id(x))
+
+207. Create `full_name` using f-string
+
+first = "Attah"
+last = "Maxwell"
+
+full_name = f"{first} {last}"
+print(full_name)
+
+208. Which variable names are valid?
+
+__name     Valid
+*age       Valid
+age*       Valid
+age2       Valid
+2age       Invalid
+
+209. Output
+
+x = 5
+x = x + x
+x = x + x
+print(x)
+
+Output:
+
+20
+
+210. Create `count = 0` and increase it to 10 using a loop
+
+count = 0
+
+for i in range(10):
+count += 1
+
+print(count)
+
+Output:
+
+10
+
+211. Why don't Python variables need data type declaration?
+
+Python uses dynamic typing. Python automatically determines the data type from the value assigned to the variable.
+
+212. What happens?
+
+data = [1, 2, 3]
+data2 = data
+data2[0] = 99
+
+print(data)
+
+Output:
+
+[99, 2, 3]
+
+This happens because `data` and `data2` refer to the same list.
+
+213. How do you make an independent copy?
+
+data2 = data.copy()
+
+214. Store 3 student names in different variables and print them as a list
+
+student1 = "Max"
+student2 = "John"
+student3 = "Sarah"
+
+students = [student1, student2, student3]
+print(students)
+
+215. What are `globals()` and `locals()`?
+
+`globals()` returns the global variables and their values.
+
+`locals()` returns the local variables and their values.
+
+216. Create variable `student_maths_score_2024`
+
+student_maths_score_2024 = 85
+
+217. Is this valid?
+
+x = 10
+y = 20
+
+print(x, y) if x > y else print(y, x)
+
+Yes, it is valid.
+
+Output:
+
+20 10
+
+218. Print which variable is bigger using `result`
+
+a = 10
+b = 20
+
+if a > b:
+result = a
+else:
+result = b
+
+print(result)
+
+Output:
+
+20
+
+219. Can a variable name contain an emoji?
+
+No, emojis cannot normally be used as Python identifiers.
+
+For example:
+
+😀 = 10
+
+This gives a `SyntaxError`.
+
+220. What is unpacking with `_`?
+
+The `_` can be used for a value that we do not need.
+
+a, _, c = [1, 2, 3]
+
+print(a)
+print(c)
+
+Output:
+
+1
+3
+
+The question's `[1][2][3][4][5]` should be `[1, 2, 3, 4, 5]`.
+
+221. Create `total`
+
+price = 19.99
+qty = 3
+
+total = price * qty
+print(total)
+
+Output:
+
+59.97
+
+The question's `price_qty` should be `price * qty`.
+
+222. Take name and age as input
+
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+
+print(name)
+print(age)
+
+223. Difference between `x = 10` and `x = int(10)`
+
+x = 10
+
+Directly assigns the integer `10`.
+
+x = int(10)
+
+Converts `10` to an integer before assigning it.
+
+Both produce an integer with the value `10`.
+
+224. Toggle `is_logged_in` using `not`
+
+is_logged_in = False
+
+is_logged_in = not is_logged_in
+
+print(is_logged_in)
+
+Output:
+
+True
+
+225. Output
+
+a = None
+print(a is None)
+
+Output:
+
+True
+
+226. Local and global `x`
+
+x = 10
+
+def my_func():
+x = 5
+print(x)
+
+my_func()
+print(x)
+
+Output:
+
+5
+10
+
+227. How to make a variable constant-like?
+
+Use uppercase letters by convention.
+
+PI = 3.14
+
+Python does not have true constant variables.
+
+228. Count characters in `"NOUN"`
+
+text = "NOUN"
+
+length = len(text)
+
+print(length)
+
+Output:
+
+4
+
+229. Output
+
+name = "Kelechi"
+name = name + " Noun"
+print(name)
+
+Output:
+
+Kelechi Noun
+
+230. Why does `"C:\new\folder"` cause a problem?
+
+Because `\n` is treated as a newline escape character.
+
+Use a raw string:
+
+file_path = r"C:\new\folder"
+
+Or use double backslashes:
+
+file_path = "C:\new\folder"
+
+DATA TYPES — Logic & Bug Finding (231–270)
+
+231. Output of `type(1/2)`
+
+type(1 / 2)
+
+Output:
+
+<class 'float'>
+
+Division `/` returns a `float`.
+
+232. Output of `type(2//2)`
+
+type(2 // 2)
+
+Output:
+
+<class 'int'>
+
+233. Is `"True"` the same as `True`?
+
+No.
+
+"True" is a string.
+
+True is a boolean.
+
+234. Convert `True` and `False` to integers
+
+int(True)
+
+# 1
+
+int(False)
+
+# 0
+
+235. Output
+
+str(True) + str(False)
+
+Output:
+
+TrueFalse
+
+236. Output
+
+bool("False")
+
+Output:
+
+True
+
+A non-empty string is considered `True`, even when the text inside it says `"False"`.
+
+237. Two ways to check if a string is empty
+
+text = ""
+
+len(text) == 0
+
+or
+
+text == ""
+
+238. Remove spaces, uppercase and replace `"easy"` with `"powerful"`
+
+s = " python is easy "
+
+s = s.strip()
+s = s.upper()
+s = s.replace("EASY", "POWERFUL")
+
+print(s)
+
+Output:
+
+PYTHON IS POWERFUL
+
+239. Output
+
+"python"[100]
+
+It gives an `IndexError` because index 100 does not exist.
+
+240. Output
+
+"python"[1:100]
+
+Output:
+
+ython
+
+It does not give an error. Python stops at the end of the string.
+
+241. What is immutable?
+
+Immutable means an object cannot be changed after it is created.
+
+Strings are immutable.
+
+"python"[0] = "P"
+
+This gives a `TypeError`.
+
+242. Reverse `"python"` without `reverse()`
+
+s = "python"
+
+print(s[::-1])
+
+Output:
+
+nohtyp
+
+243. Output
+
+len(" ")
+
+# 1
+
+len("")
+
+# 0
+
+A space is still a character.
+
+244. Add 5 to `age = "20"`
+
+age = "20"
+
+age = int(age)
+age = age + 5
+
+print(age)
+
+Output:
+
+25
+
+245. Difference between `list("abc")` and `["abc"]`
+
+list("abc")
+
+Output:
+
+['a', 'b', 'c']
+
+["abc"]
+
+Output:
+
+['abc']
+
+246. Output of `[1, 2, 3] * 2`
+
+[1, 2, 3] * 2
+
+Output:
+
+[1, 2, 3, 1, 2, 3]
+
+The `_` in the question should be `*`.
+
+247. Output of `(1, 2, 3) * 2`
+
+(1, 2, 3) * 2
+
+Output:
+
+(1, 2, 3, 1, 2, 3)
+
+248. What is `{"a":1} * 2`?
+
+It will give a `TypeError`.
+
+Dictionaries cannot be multiplied by an integer.
+
+249. Can a dictionary have a list or tuple as a key?
+
+A list cannot be a dictionary key because lists are mutable.
+
+A tuple can be a dictionary key if its contents are hashable.
+
+Example:
+
+d = {(1, 2): "Hello"}
+
+250. Output
+
+set([1, 1, 2, 2, 3])
+
+Output:
+
+{1, 2, 3}
+
+Duplicates are removed.
+
+251. How do you add an item to a set?
+
+Use `add()`.
+
+numbers = {1, 2}
+numbers.add(3)
+
+252. How do you add an item to a list?
+
+Use `append()`.
+
+numbers = [1, 2]
+numbers.append(3)
+
+253. What is the common mistake?
+
+[1, 2, 3].append(4)
+
+`append()` changes the list but returns `None`.
+
+Correct:
+
+my_list = [1, 2, 3]
+my_list.append(4)
+
+print(my_list)
+
+Output:
+
+[1, 2, 3, 4]
+
+254. Output
+
+a = [1, 2]
+b = a
+b = [3, 4]
+
+print(a)
+
+Output:
+
+[1, 2]
+
+`b = [3, 4]` makes `b` refer to a new list. It does not change `a`.
+
+255. Convert tuple to list, add 4, convert back
+
+my_tuple = (1, 2, 3)
+
+my_list = list(my_tuple)
+my_list.append(4)
+
+my_tuple = tuple(my_list)
+
+print(my_tuple)
+
+Output:
+
+(1, 2, 3, 4)
+
+256. Extract keys and values
+
+d = {"name": "Max", "dept": "NOUN"}
+
+keys = d.keys()
+values = d.values()
+
+print(keys)
+print(values)
+
+257. `isinstance()` vs `type()`
+
+isinstance([1, 2], list)
+
+# True
+
+type([1, 2]) == list
+
+# True
+
+`isinstance()` is generally more flexible because it also recognizes subclasses.
+
+258. What is `None` used for?
+
+`None` represents no value or no result.
+
+Example 1:
+
+result = None
+
+Example 2:
+
+def greet():
+print("Hello")
+
+answer = greet()
+
+259. Output
+
+float("inf")
+
+Output:
+
+inf
+
+Its type is:
+
+<class 'float'>
+
+260. Output
+
+int(True) + int(False) + int(True)
+
+Output:
+
+2
+
+261. Check whether `x` is int, float or other
+
+x = 10.5
+
+if isinstance(x, int):
+print("Integer")
+elif isinstance(x, float):
+print("Float")
+else:
+print("Other")
+
+Output:
+
+Float
+
+262. Deep copy vs shallow copy
+
+A shallow copy copies the outer object but may still share nested objects.
+
+A deep copy creates independent copies of nested objects too.
+
+Use `copy.copy()` for a shallow copy.
+
+Use `copy.deepcopy()` for a deep copy.
+
+Example:
+
+import copy
+
+b = copy.copy(a)
+
+c = copy.deepcopy(a)
+
+263. Output
+
+a = "5"
+b = int(a)
+c = float(b)
+
+print(c)
+
+Output:
+
+5.0
+
+264. List containing 5 different data types
+
+my_list = [10, 2.5, "Hello", True, [1, 2]]
+
+265. Output
+
+bool([0])
+
+Output:
+
+True
+
+The list is not empty. The value inside the list does not matter for the list's truth value.
+
+266. `bytes` and `bytearray`
+
+`bytes` is an immutable sequence of bytes.
+
+`bytearray` is a mutable sequence of bytes.
+
+267. Convert `123` to `"123"` and `"123"` to `123.0`
+
+a = str(123)
+
+b = float("123")
+
+268. What happens?
+
+x = ["a", "b", "c"]
+print(x[0][1])
+
+Output:
+
+IndexError
+
+`x[0]` is `"a"`, and `"a"` has no index `1`.
+
+The question's `["a"]["b"]["c"]` should be `["a", "b", "c"]`.
+
+269. What is `complex(2,3)`?
+
+complex(2, 3)
+
+Output:
+
+(2+3j)
+
+It creates a complex number with real part `2` and imaginary part `3`.
+
+270. Take user input and detect its type
+
+value = input("Enter something: ")
+
+try:
+value = int(value)
+print(type(value))
+except ValueError:
+print(type(value))
+
+Note: `input()` initially gives a string. This code attempts to convert numeric input to an integer.
+
+OPERATORS — Calculation & Logic (271–300)
+
+271. Output of `2 * 3 * 2`
+
+2 * 3 = 6
+
+6 * 2 = 12
+
+Output:
+
+12
+
+272. Output of `-3 * 2`
+
+-3 * 2
+
+Output:
+
+-6
+
+The question says `_` but it should be `*`.
+
+273. Output of `(-3) ** 2`
+
+(-3) ** 2
+
+Output:
+
+9
+
+The question's `__` should be `**`.
+
+274. Output of `10 + 3 * 2 * 2`
+
+10 + 3 * 2 * 2
+
+3 * 2 = 6
+
+6 * 2 = 12
+
+10 + 12 = 22
+
+Output:
+
+22
+
+275. Calculate BMI
+
+weight = float(input("Enter weight: "))
+height = float(input("Enter height: "))
+
+BMI = weight / (height ** 2)
+
+print(BMI)
+
+The question's `__2` should be `** 2`.
+
+276. Check if `x = 15` is between 10 and 20
+
+x = 15
+
+if 10 <= x <= 20:
+print("Between 10 and 20")
+else:
+print("Not between 10 and 20")
+
+277. Output
+
+5 == 5 and 10 == 10 and 15 == 20
+
+Output:
+
+False
+
+The last condition is false.
+
+278. Output
+
+5 == 5 or 10 == 20 or 15 == 20
+
+Output:
+
+True
+
+At least one condition is true.
+
+279. Output
+
+not (5 > 3)
+
+Output:
+
+False
+
+280. Output
+
+not 0
+
+# True
+
+not 1
+
+# False
+
+not ""
+
+# True
+
+281. Short-circuit
+
+False and (10 / 0)
+
+Output:
+
+False
+
+It does not give a division-by-zero error because `and` stops when the first condition is already `False`.
+
+282. Short-circuit
+
+True or (10 / 0)
+
+Output:
+
+True
+
+It does not give an error because `or` stops when the first condition is already `True`.
+
+283. Output
+
+10 % 2 == 0 and 10 % 3 == 0
+
+Output:
+
+False
+
+For 15:
+
+15 % 2 == 0 and 15 % 3 == 0
+
+Output:
+
+False
+
+15 is divisible by 3 but not by 2.
+
+284. Check if a number is divisible by 2
+
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+print("Divisible by 2")
+else:
+print("Not divisible by 2")
+
+285. Check if number is even AND greater than 10
+
+num = int(input("Enter a number: "))
+
+if num % 2 == 0 and num > 10:
+print("Even and greater than 10")
+else:
+print("Condition not met")
+
+286. Output
+
+a = 5
+a += 2 * 3
+print(a)
+
+Output:
+
+11
+
+Because:
+
+2 * 3 = 6
+
+5 + 6 = 11
+
+287. Output
+
+x = 10
+x //= 3
+print(x)
+
+Output:
+
+3
+
+288. Output
+
+x = 2
+x *= 3
+x *= 2
+print(x)
+
+Output:
+
+12
+
+289. Difference between `x = x + 1` and `x += 1`
+
+Both increase `x` by 1.
+
+x = x + 1
+
+and
+
+x += 1
+
+produce the same result.
+
+290. Output
+
+"ab" in "abc" and "d" not in "abc"
+
+Output:
+
+True
+
+291. Check if user-entered letter is in `"python"`
+
+letter = input("Enter a letter: ")
+
+if letter in "python":
+print("Letter is in python")
+else:
+print("Letter is not in python")
+
+292. Output
+
+a = 1000
+b = 1000
+
+a is b
+
+The result is not something you should rely on for ordinary integers; object identity can depend on Python implementation and optimization.
+
+For:
+
+a = 10
+b = 10
+
+a is b
+
+This commonly returns:
+
+True
+
+Small integers are commonly cached.
+
+Use `==` when comparing values, not `is`.
+
+293. Output
+
+[] == []
+
+True
+
+[] is []
+
+False
+
+The two empty lists have equal values but are different objects.
+
+294. Check if 3 variables have the same value
+
+a = 10
+b = 10
+c = 10
+
+if a == b and b == c:
+print("All are the same")
+else:
+print("They are different")
+
+295. What is the Walrus operator `:=`?
+
+The walrus operator assigns a value to a variable while also using that value in an expression.
+
+Example:
+
+if (n := len([1, 2, 3])) > 2:
+print(n)
+
+Output:
+
+3
+
+296. Use walrus operator to take input until `"exit"`
+
+while (text := input("Enter something: ")) != "exit":
+print(text)
+
+297. Output of `10 & 2`
+
+10 & 2
+
+Output:
+
+2
+
+Binary:
+
+10 = 1010
+2  = 0010
+
+AND:
+
+1010
+0010
+----
+
+0010
+
+So the answer is `2`.
+
+298. Output of `10 | 2`
+
+10 | 2
+
+Output:
+
+10
+
+Binary:
+
+1010
+0010
+----
+
+1010
+
+So the answer is `10`.
+
+299. Swap two numbers using XOR
+
+a = 5
+b = 10
+
+a = a ^ b
+b = a ^ b
+a = a ^ b
+
+print(a, b)
+
+Output:
+
+10 5
+
+300. Mini calculator using arithmetic operators
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+operator = input("Enter operator (+, -, *, /, %, //, **): ")
+
+if operator == "+":
+print(a + b)
+
+elif operator == "-":
+print(a - b)
+
+elif operator == "*":
+print(a * b)
+
+elif operator == "/":
+print(a / b)
+
+elif operator == "%":
+print(a % b)
+
+elif operator == "//":
+print(a // b)
+
+elif operator == "**":
+print(a ** b)
+
+else:
+print("Invalid operator")
