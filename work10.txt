@@ -1,4 +1,3 @@
-SECTION A: VARIABLES
 1. A variable is a name used to store a value in a program.
 
 2. By assigning a value to a name using `=`.
@@ -1996,7 +1995,6 @@ a = a ^ b
 print(a, b)
 
 Output:
-
 10 5
 
 300. Mini calculator using arithmetic operators
@@ -2027,3 +2025,1668 @@ print(a ** b)
 
 else:
 print("Invalid operator")
+
+301. Output:
+     x = 5
+     print(x)
+     x = "hello"
+     print(x)
+
+Output:
+5
+hello
+
+Python is strongly typed because a variable cannot be treated as an unrelated type without conversion. But Python is dynamically typed because the variable can be reassigned to another type.
+
+302. Fix the bug:
+     name = input("Enter name: ")
+     age = int(input("Enter age: "))
+     print(age + 10)
+
+303. `x` is not created because the `if False` block never runs.
+
+print(x)
+
+Output:
+NameError
+
+304. Create 5 student variables:
+     name = "John"
+     matric_no = "KDU/SE/001"
+     course = "Software Engineering"
+     gpa = 4.20
+     is_active = True
+
+305. Output:
+     a = b = c = [1]
+     c.append(2)
+     print(a, b, c)
+
+Output:
+[1, 2] [1, 2] [1, 2]
+
+Surprise: all three variables refer to the same list.
+
+306. Avoid the bug by creating separate lists:
+     a = [1]
+     b = [1]
+     c = [1]
+
+307.
+
+NameError — using a variable that does not exist.
+
+TypeError — using a variable with an inappropriate data type.
+
+ValueError — the type is correct, but the value cannot be converted or used correctly.
+
+308. Crash with NameError:
+     print(age)
+
+Fix:
+age = 20
+print(age)
+
+309. Global variable:
+     x = 10
+
+def show():
+print(x)
+
+show()
+print(x)
+
+Output:
+10
+10
+
+Local variable:
+x = 10
+
+def show():
+x = 5
+print(x)
+
+show()
+print(x)
+
+Output:
+5
+10
+
+310.
+
+x = 10
+
+def change():
+global x
+x = 20
+
+change()
+print(x)
+
+Output:
+20
+
+311. `nonlocal` allows an inner function to change a variable belonging to its outer function.
+
+def outer():
+x = 10
+
+```
+def inner():
+    nonlocal x
+    x = 20
+
+inner()
+print(x)
+```
+
+outer()
+
+Output:
+20
+
+312. Yes:
+     a = b = c = 10
+
+It is valid, but use it only when all variables should intentionally have the same value.
+
+313. `_` is commonly used for a value we do not need.
+
+for _ in range(5):
+print("Hello")
+
+The loop runs 5 times.
+
+314.
+
+first_name = "John"
+last_name = "Doe"
+
+full_name = first_name + " " + last_name
+
+full_name = " ".join([first_name, last_name])
+
+full_name = f"{first_name} {last_name}"
+
+315.
+
+sentence = "I love Python"
+
+words = sentence.split()
+count = 0
+
+for word in words:
+count += 1
+
+print(count)
+
+Output:
+3
+
+316.
+
+x = 10
+y = "10"
+
+print(x is int(y))
+
+Output:
+False
+
+`int(y)` creates an integer with value 10, but `is` checks whether they are the same object, not whether their values are equal.
+
+317.
+
+name = input("Name: ")
+age = input("Age: ")
+phone = input("Phone: ")
+
+Phone should be a string because we do not perform arithmetic with phone numbers, and they may contain leading zeros or symbols such as `+234`.
+
+318. `PI = 3.14` is only a naming convention. Python does not prevent it from changing.
+
+PI = 3.14
+PI = 4
+
+Python has no built-in true constant variables.
+
+319.
+
+a = 5
+b = 5
+print(id(a) == id(b))
+
+Output:
+True
+
+Python commonly reuses the same object for small integers.
+
+320.
+
+a = 257
+b = 257
+print(a is b)
+
+The result can differ depending on how Python creates/stores the integers. In a script, it may be True because of compiler interning; in IDLE or other contexts it may be False.
+
+Use `==` to compare values, not `is`.
+
+321.
+
+a = 10
+b = 20
+c = 30
+
+del a, b, c
+
+322.
+
+print(globals().keys())
+
+This shows names stored in the global namespace, including names created by Python.
+
+323.
+
+str = "hello"
+print(str(10))
+
+Output:
+TypeError
+
+The variable `str` has replaced access to Python's built-in `str()` function.
+
+324. Q323 is dangerous because you can no longer use the built-in `str()` function normally.
+
+325.
+
+x = [1, 2, 3]
+
+y = x.copy()
+y.append(4)
+
+print(x)
+print(y)
+
+Output:
+[1, 2, 3]
+[1, 2, 3, 4]
+
+But:
+
+y = x
+y.append(4)
+
+Now both refer to the same list.
+
+326.
+
+balance = 1000
+
+for _ in range(3):
+balance -= 100
+
+print(balance)
+
+Output:
+700
+
+327. Dynamic variable creation means creating variable names programmatically.
+
+globals()["x" + str(1)] = 10
+
+print(x1)
+
+Output:
+10
+
+328. Usually avoid dynamic variables because they make programs harder to read, debug and maintain. A dictionary is usually better.
+
+data = {}
+data["x1"] = 10
+
+329.
+
+a, b, c = 1, 2, 3
+a, b, c = b, c, a
+
+Output:
+a = 2
+b = 3
+c = 1
+
+330.
+
+x = True
+x = x + 5
+print(x)
+
+Output:
+6
+
+`True` behaves like `1` in arithmetic.
+
+331.
+
+data = None
+
+if data is not None:
+print("Data has been assigned")
+else:
+print("No data")
+
+332.
+
+a = 10
+b = 5
+
+sum_result = a + b
+difference = a - b
+product = a * b
+
+333. Stack and heap in simple English:
+
+Stack — stores information related to function calls and local variables.
+
+Heap — stores objects such as lists, dictionaries and other Python objects.
+
+Python manages this memory automatically.
+
+334.
+
+name = " noun "
+
+clean_name = name.strip().lower().capitalize()
+
+print(clean_name)
+
+Output:
+Noun
+
+335. Example for the name "John":
+     j = "J"
+     o = "o"
+     h = "h"
+     n = "n"
+
+name = "".join([j, o, h, n])
+
+print(name)
+
+Output:
+John
+
+DATA TYPES — Deep Dive (336–390)
+
+336.
+
+print(type([]))
+print(type(()))
+print(type({}))
+print(type(set()))
+
+Output:
+<class 'list'>
+<class 'tuple'>
+<class 'dict'>
+<class 'set'>
+
+337. `{}` is reserved for an empty dictionary.
+
+Empty set:
+s = set()
+
+338.
+
+print(bool(0))
+print(bool(0.0))
+print(bool(0j))
+print(bool(""))
+print(bool([]))
+print(bool({}))
+print(bool(None))
+
+Output:
+False
+False
+False
+False
+False
+False
+False
+
+339. Seven common falsy values:
+
+0
+0.0
+0j
+""
+[]
+{}
+None
+
+340. Three surprising truthy values:
+
+bool("False") → True
+bool("0") → True
+bool([0]) → True
+
+They are truthy because they are non-empty.
+
+341. Assuming `_` means `*`:
+
+"hello" * 0
+
+Output:
+""
+
+"hello" * -5
+
+Output:
+""
+
+342.
+
+[1, 2] * 2.5
+
+Output:
+TypeError
+
+Lists can only be repeated using an integer.
+
+343.
+
+s = "Python"
+print(s[::-1])
+
+Output:
+nohtyP
+
+`[::-1]` reverses the string.
+
+344.
+
+s = "Python Programming"
+
+print(s[:3])
+print(s[-3:])
+
+Output:
+Pyt
+ing
+
+345. `ord()` converts a character to its Unicode number.
+
+`chr()` converts a Unicode number back to a character.
+
+print(ord("A"))
+print(chr(65))
+
+Output:
+65
+A
+
+346.
+
+text = input("Enter a word: ")
+
+if text == text[::-1]:
+print("Palindrome")
+else:
+print("Not palindrome")
+
+347. `strip()` removes spaces from both ends.
+
+text = "  Python  "
+print(text.strip())
+
+`lstrip()` removes from the left.
+
+print(text.lstrip())
+
+`rstrip()` removes from the right.
+
+print(text.rstrip())
+
+348. `split()` turns a string into a list.
+
+text = "a,b,c"
+parts = text.split(",")
+
+Output:
+['a', 'b', 'c']
+
+`join()` combines strings.
+
+result = "-".join(parts)
+
+Output:
+a-b-c
+
+349.
+
+language = "Python"
+text = "I love Java"
+
+text = text.replace("Java", language)
+
+print(text)
+
+Output:
+I love Python
+
+350.
+
+s = "python"
+before = id(s)
+
+s += "!"
+
+after = id(s)
+
+print(before)
+print(after)
+
+The IDs are normally different because strings are immutable. `s += "!"` creates a new string.
+
+351.
+
+a = [1, 2]
+
+a.append([4, 5])
+print(a)
+
+Output:
+[1, 2, [4, 5]]
+
+`append()` adds the entire list as one item.
+
+a = [1, 2]
+a.extend([4, 5])
+print(a)
+
+Output:
+[1, 2, 4, 5]
+
+`extend()` adds each item separately.
+
+352.
+
+a = [1, 2, 3]
+print(a.append(4))
+
+Output:
+None
+
+`append()` changes the list but does not return the updated list.
+
+353.
+
+a = [2, 3, 4]
+a.insert(0, 1)
+
+print(a)
+
+Output:
+[1, 2, 3, 4]
+
+354. Remove by value:
+     a.remove(2)
+
+Remove by index:
+a.pop(1)
+
+`remove()` searches for a value.
+
+`pop()` removes an item using its index and can return that item.
+
+355.
+
+a = [1, 2, 3]
+a.pop()
+a.pop(0)
+
+print(a)
+
+Output:
+[2]
+
+356. Yes. A tuple can contain a mutable list.
+
+t = ([1, 2], 3)
+
+The tuple itself cannot have its items replaced, but the list inside it can be changed.
+
+357.
+
+t = ([1, 2], 3)
+t[0].append(99)
+
+print(t)
+
+Output:
+([1, 2, 99], 3)
+
+No error occurs because the list is mutable.
+
+358.
+
+(5)
+
+is an integer, not a tuple.
+
+359. A single-element tuple needs a comma:
+
+t = (5,)
+
+print(type(t))
+
+Output:
+<class 'tuple'>
+
+360. A set stores unique values.
+
+s = {[1, 2]}
+
+This gives a TypeError because lists are unhashable.
+
+This works:
+
+s = {(1, 2)}
+
+Because a tuple containing hashable values can be used in a set.
+
+361. Hashable means an object can be used as a dictionary key or set element.
+
+Lists are mutable, so they are not hashable.
+
+362.
+
+d = {True: "yes", 1: "no", 1.0: "maybe"}
+
+print(d)
+
+Output:
+{True: 'maybe'}
+
+`True`, `1`, and `1.0` are considered equal as dictionary keys, so the later values replace the earlier values.
+
+363.
+
+d = {"a": 1}
+
+print(d["b"])
+
+This gives:
+KeyError
+
+print(d.get("b"))
+
+Output:
+None
+
+print(d.get("b", 0))
+
+Output:
+0
+
+364.
+
+d1 = {"a": 1}
+d2 = {"b": 2}
+
+d3 = d1 | d2
+
+print(d3)
+
+Output:
+{'a': 1, 'b': 2}
+
+365.
+
+keys() — returns dictionary keys.
+values() — returns dictionary values.
+items() — returns key-value pairs.
+
+They return dictionary view objects.
+
+366.
+
+text = "123,456,789"
+
+numbers = [int(x) for x in text.split(",")]
+
+print(numbers)
+
+Output:
+[123, 456, 789]
+
+367.
+
+numbers = [1, 2, 3]
+
+result = "-".join(map(str, numbers))
+
+print(result)
+
+Output:
+1-2-3
+
+368.
+
+result = list(map(int, ["1", "2", "3"]))
+
+print(result)
+
+Output:
+[1, 2, 3]
+
+Data type:
+list
+
+369.
+
+mixed = [1, "a", 2.5, True, None, [1]]
+
+for item in mixed:
+print(item, type(item))
+
+370.
+
+print(isinstance(True, int))
+
+Output:
+True
+
+`bool` is a subclass of `int`, so `True` behaves like `1` and `False` like `0` in some contexts.
+
+371. `type()` checks the exact type.
+
+`isinstance()` also considers inheritance.
+
+Example:
+isinstance(True, int)
+
+Output:
+True
+
+For inheritance checks, `isinstance()` is generally better.
+
+372.
+
+value = input("Enter something: ")
+
+if value.isdigit():
+value = int(value)
+
+print(value)
+print(type(value))
+
+373. Access 80:
+
+data = {
+"students": [
+{
+"name": "Max",
+"scores": [90, 80]
+}
+]
+}
+
+print(data["students"][0]["scores"][1])
+
+Output:
+80
+
+374. `copy()` makes a shallow copy. Nested objects can still be shared.
+
+`deepcopy()` copies nested objects too.
+
+from copy import deepcopy
+
+new_data = deepcopy(old_data)
+
+375.
+
+a = float("nan")
+
+print(a == a)
+
+Output:
+False
+
+NaN means "Not a Number", and NaN is not equal to itself.
+
+376.
+
+import math
+
+x = float("nan")
+
+print(math.isnan(x))
+
+Output:
+True
+
+377. They are different values:
+
+None — represents no value.
+0 — integer zero.
+"" — empty string.
+False — Boolean false.
+
+They can all be falsy, but they are not the same thing.
+
+378.
+
+numbers = [1, 1, 2, 2, 3, 3]
+
+result = list(set(numbers))
+
+A set removes duplicates, but you should not rely on a set to preserve the original order.
+
+379.
+
+numbers = [1, 1, 2, 2, 3, 3]
+
+result = list(dict.fromkeys(numbers))
+
+print(result)
+
+Output:
+[1, 2, 3]
+
+380.
+
+print(len([[]]))
+print(len([]))
+
+Output:
+1
+0
+
+`[[]]` contains one item: an empty list.
+
+381. `b"hello"` is a bytes object.
+
+It is used when working with binary data such as files, network data and encoded text.
+
+382.
+
+sentence = input("Enter sentence: ")
+words = sentence.split()
+
+int_count = 0
+float_count = 0
+string_count = 0
+
+for word in words:
+try:
+int(word)
+int_count += 1
+except ValueError:
+try:
+float(word)
+float_count += 1
+except ValueError:
+string_count += 1
+
+print("Integers:", int_count)
+print("Floats:", float_count)
+print("Strings:", string_count)
+
+383. `sys.getsizeof()` shows the memory size of an object in bytes.
+
+import sys
+
+x = [1, 2, 3]
+print(sys.getsizeof(x))
+
+The exact size depends on the Python implementation and object.
+
+384.
+
+import sys
+
+x = 10
+
+print("Value:", x)
+print("Type:", type(x))
+print("ID:", id(x))
+print("Size:", sys.getsizeof(x))
+
+385. There is no general built-in function that directly tells whether every object is mutable. A simple demonstration can be made by trying to modify it.
+
+For example:
+x = [1, 2]
+
+try:
+x.append(3)
+print("Mutable")
+except AttributeError:
+print("Immutable")
+
+386.
+
+a = "python"
+
+print(a is "python")
+
+It may output:
+True
+
+But this is not a reliable way to compare strings.
+
+Use:
+a == "python"
+
+`is` checks object identity; `==` checks value equality.
+
+387. String interning is Python's optimization of storing/reusing some identical string objects.
+
+388.
+
+student = {
+"name": "John",
+"age": 20,
+"courses": ["Python", "Database"],
+"grades": {
+"Python": 85,
+"Database": 78
+}
+}
+
+389. Use the `json` module.
+
+import json
+
+student_json = json.dumps(student)
+
+print(student_json)
+
+390.
+
+value = input("Enter a value: ")
+
+print("Value:", value)
+print("Type:", type(value))
+print("ID:", id(value))
+print("Bool:", bool(value))
+
+Strings are immutable, so the input value itself is not mutable.
+
+OPERATORS — Tricky & Projects (391–450)
+
+391. Assuming `_` means `*`:
+
+5 + 2 * 3 * 2 / 2 - 1
+
+Output:
+10
+
+392.
+
+100 / 10 / 2
+
+Output:
+5.0
+
+Division works from left to right.
+
+393.
+
+100 // 10 // 2
+
+Output:
+5
+
+Floor division also works from left to right.
+
+394.
+
+2 * 3 * 2
+(2 * 3) * 2
+
+Both output:
+12
+
+Multiplication is evaluated left to right.
+
+395. Compound interest formula:
+
+A = P(1 + r/n)^(nt)
+
+Example:
+P = 10000
+r = 0.05
+n = 1
+t = 2
+
+A = P * (1 + r / n) ** (n * t)
+
+print(A)
+
+396. `/` gives normal division.
+
+-10 / 3
+
+Output:
+-3.3333333333333335
+
+`//` gives floor division.
+
+-10 // 3
+
+Output:
+-4
+
+It rounds down toward negative infinity, not simply toward zero.
+
+397.
+
+print(10 % -3)
+print(-10 % 3)
+
+Output:
+-2
+2
+
+Python's modulo result follows the sign of the divisor.
+
+398.
+
+print(divmod(10, 3))
+
+Output:
+(3, 1)
+
+It gives:
+quotient = 10 // 3
+remainder = 10 % 3
+
+399.
+
+number = 1234
+
+d1 = number // 1000
+number %= 1000
+
+d2 = number // 100
+number %= 100
+
+d3 = number // 10
+d4 = number % 10
+
+print(d1, d2, d3, d4)
+
+Output:
+1 2 3 4
+
+400. `==` checks equality.
+
+`!=` checks inequality.
+
+Floating-point calculations can have tiny precision errors.
+
+print(0.1 + 0.2 == 0.3)
+
+Output:
+False
+
+401.
+
+a = 0.1 + 0.2
+b = 0.3
+
+if abs(a - b) < 0.00001:
+print("Equal")
+
+402.
+
+print("apple" > "banana")
+
+Output:
+False
+
+Strings are compared lexicographically using character Unicode values.
+
+403.
+
+print([1, 2, 3] > [1, 2, 2])
+
+Output:
+True
+
+Python compares corresponding elements from left to right. The first difference is `3 > 2`.
+
+404.
+
+print((1, 2) == [1, 2])
+
+Output:
+False
+
+A tuple and a list are different data types.
+
+405.
+
+year = int(input("Enter year: "))
+
+if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
+print("Leap year")
+else:
+print("Not a leap year")
+
+406.
+
+a = float(input("Side 1: "))
+b = float(input("Side 2: "))
+c = float(input("Side 3: "))
+
+if a + b > c and a + c > b and b + c > a:
+print("Can form triangle")
+else:
+print("Cannot form triangle")
+
+407.
+
+print(True + True + False)
+
+Output:
+2
+
+`True` acts like `1` and `False` acts like `0` in arithmetic.
+
+408. Assuming `_` means `*`:
+
+False * 100
+
+Output:
+0
+
+True * 100
+
+Output:
+100
+
+409.
+
+x = 10
+y = 20
+
+print(x > 5 and y > 5)
+
+Output:
+True
+
+410. Truth table:
+
+and:
+True and True → True
+True and False → False
+False and True → False
+False and False → False
+
+or:
+True or True → True
+True or False → True
+False or True → True
+False or False → False
+
+not:
+not True → False
+not False → True
+
+411.
+
+print(5 and 10)
+
+Output:
+10
+
+`and` returns an operand, not necessarily `True` or `False`. Since 5 is truthy, Python returns the second value, 10.
+
+412.
+
+print(0 and 10)
+print(0 or 10)
+print("" or "default")
+
+Output:
+0
+10
+default
+
+413.
+
+name = input("Enter name: ") or "Guest"
+
+print(name)
+
+If the user enters nothing, `"Guest"` is used.
+
+414.
+
+print(not 10 > 5)
+print(not (10 > 5))
+
+Both output:
+False
+
+The comparison happens before `not`.
+
+415.
+
+number = int(input("Enter number: "))
+
+if 1 <= number <= 100 and number % 2 == 0 and number % 10 != 0:
+print(True)
+else:
+print(False)
+
+416. Yes, `+=` works with strings.
+
+s = "hi"
+s += " there"
+
+print(s)
+
+Output:
+hi there
+
+417. If the question means:
+
+a = [1]
+a_ = 3
+
+This is valid Python. `a_` is simply a different variable name.
+
+It does not change `a`.
+
+418.
+
+a = [1, 2]
+b = a
+
+b += [3]
+
+print(a)
+
+Output:
+[1, 2, 3]
+
+`b` and `a` refer to the same list, and `+=` modifies that list.
+
+419.
+
+a = [1, 2]
+b = a
+
+b = b + [3]
+
+print(a)
+
+Output:
+[1, 2]
+
+`b + [3]` creates a new list, then `b` points to that new list.
+
+420. Q418 changes the original list because `+=` mutates the list.
+
+Q419 creates a new list using `+`, so the original list remains unchanged.
+
+421.
+
+"a" in {"a": 1}
+
+Output:
+True
+
+For a dictionary, `in` checks keys.
+
+To check values:
+1 in {"a": 1}.values()
+
+Output:
+True
+
+422.
+
+text = input("Enter text: ")
+search = input("Search for: ")
+
+if search.lower() in text.lower():
+print("Found")
+else:
+print("Not found")
+
+423.
+
+a = 10
+b = 10
+
+print(a is b)
+
+Often:
+True
+
+Python commonly interns/reuses small integers.
+
+For larger integers:
+a = 1000
+b = 1000
+
+`a is b` may be True or False depending on how the objects were created.
+
+Use `==` for values.
+
+424. Interning means Python may reuse the same object for certain values, such as some small integers and strings, to save memory.
+
+Therefore `is` can sometimes appear to work for equal values, but it should not be used for ordinary value comparison.
+
+425.
+
+numbers = [1, 3, 5, 8, 9]
+
+has_even = False
+
+for number in numbers:
+if number % 2 == 0:
+has_even = True
+break
+
+print(has_even)
+
+Output:
+True
+
+426.
+
+print(~5)
+
+Output:
+-6
+
+Bitwise NOT follows:
+~x = -(x + 1)
+
+So:
+~5 = -6
+
+427. `<<` shifts bits to the left.
+
+print(5 << 1)
+
+Output:
+10
+
+`>>` shifts bits to the right.
+
+print(5 >> 1)
+
+Output:
+2
+
+428. Bitwise operators can be used for flags and permissions.
+
+Example:
+READ = 1
+WRITE = 2
+EXECUTE = 4
+
+permissions = READ | WRITE
+
+429. A ternary operator is a short way to write a simple if/else.
+
+age = 20
+
+status = "adult" if age >= 18 else "minor"
+
+print(status)
+
+430.
+
+score = 75
+
+grade = "A" if score >= 70 else "B" if score >= 60 else "C" if score >= 50 else "F"
+
+print(grade)
+
+Output:
+A
+
+431. Yes.
+
+x = 10 if True else 20
+
+print(x)
+
+Output:
+10
+
+432. `=` assigns a value.
+
+`:=` assigns a value and also returns that value inside an expression.
+
+Example:
+if (x := 10) > 5:
+print(x)
+
+433.
+
+while (text := input("Enter text: ")) != "quit":
+print(text)
+
+434.
+
+a = 10
+b = 25
+c = 15
+
+maximum = a if a > b and a > c else b if b > c else c
+
+print(maximum)
+
+Output:
+25
+
+435. Top operator precedence, from higher to lower:
+
+436. `()`
+
+437. `**`
+
+438. Unary `+`, `-`, `~`
+
+439. `*`, `/`, `//`, `%`
+
+440. `+`, `-`
+
+441. `<<`, `>>`
+
+442. `&`
+
+443. `^`
+
+444. `|`
+
+445. Comparisons: `<`, `>`, `<=`, `>=`, `==`, `!=`
+
+446. Without parentheses:
+     result = 10 + 5 * 2
+
+Output:
+20
+
+With parentheses:
+result = (10 + 5) * 2
+
+Output:
+30
+
+437. `eval()` can execute Python code contained in a string, so using it with untrusted user input can be dangerous.
+
+Example:
+eval(user_input)
+
+A safer alternative is to manually handle allowed operations.
+
+438.
+
+a = float(input("First number: "))
+op = input("Operator (+, -, *, /): ")
+b = float(input("Second number: "))
+
+if op == "+":
+result = a + b
+elif op == "-":
+result = a - b
+elif op == "*":
+result = a * b
+elif op == "/":
+if b != 0:
+result = a / b
+else:
+result = "Cannot divide by zero"
+else:
+result = "Invalid operator"
+
+print(result)
+
+439.
+
+m1 = float(input("Subject 1: "))
+m2 = float(input("Subject 2: "))
+m3 = float(input("Subject 3: "))
+m4 = float(input("Subject 4: "))
+m5 = float(input("Subject 5: "))
+
+total = m1 + m2 + m3 + m4 + m5
+average = total / 5
+percentage = (total / 500) * 100
+
+print("Total:", total)
+print("Average:", average)
+print("Percentage:", percentage)
+
+440. The question's `_` means `*`:
+
+celsius = float(input("Celsius: "))
+
+fahrenheit = (celsius * 9 / 5) + 32
+
+print(fahrenheit)
+
+441.
+
+number = float(input("Enter number: "))
+
+if number > 0:
+print("Positive")
+elif number < 0:
+print("Negative")
+else:
+print("Zero")
+
+442.
+
+ch = input("Enter a character: ")
+
+if 'a' <= ch <= 'z':
+print("Alphabet")
+else:
+print("Not a lowercase alphabet")
+
+443.
+
+balance = 10000
+withdraw = 2000
+
+if withdraw <= balance:
+balance -= withdraw
+print("Withdrawal successful")
+print("Balance:", balance)
+else:
+print("Insufficient balance")
+
+444.
+
+password = input("Enter password: ")
+
+has_length = len(password) >= 8
+has_upper = any(ch.isupper() for ch in password)
+has_digit = any(ch.isdigit() for ch in password)
+
+if has_length and has_upper and has_digit:
+print("Strong password")
+else:
+print("Weak password")
+
+445.
+
+print(bool(10 > 5 > 3 > 20))
+
+Output:
+False
+
+Chained comparison means:
+
+10 > 5 and 5 > 3 and 3 > 20
+
+The last comparison is false.
+
+446.
+
+text = input("Enter text: ")
+
+if len(text) > 5 and "a" in text and "z" not in text:
+print(True)
+else:
+print(False)
+
+447.
+
+username = input("Username: ")
+password = input("Password: ")
+
+if username == "admin" and password == "1234":
+print("Login successful")
+else:
+print("Invalid login")
+
+448.
+
+a = float(input("First number: "))
+b = float(input("Second number: "))
+c = float(input("Third number: "))
+
+print("Addition:", a + b + c)
+print("Subtraction:", a - b - c)
+print("Multiplication:", a * b * c)
+
+if b != 0 and c != 0:
+print("Division:", a / b / c)
+
+print("a == b:", a == b)
+print("a != b:", a != b)
+print("a > b:", a > b)
+print("a < b:", a < b)
+print("a >= b:", a >= b)
+print("a <= b:", a <= b)
+
+449.
+
+price1 = float(input("Price of item 1: "))
+qty1 = int(input("Quantity 1: "))
+
+price2 = float(input("Price of item 2: "))
+qty2 = int(input("Quantity 2: "))
+
+price3 = float(input("Price of item 3: "))
+qty3 = int(input("Quantity 3: "))
+
+total = (price1 * qty1) + (price2 * qty2) + (price3 * qty3)
+
+if total > 5000:
+tax = total * 0.10
+else:
+tax = 0
+
+final_total = total + tax
+
+print("Subtotal:", total)
+print("Tax:", tax)
+print("Final total:", final_total)
+
+450. Final Mega Project:
+
+name = input("Enter student name: ")
+
+score1 = float(input("Enter score 1: "))
+score2 = float(input("Enter score 2: "))
+score3 = float(input("Enter score 3: "))
+
+average = (score1 + score2 + score3) / 3
+
+top_students = ["John", "Mary", "David"]
+
+if average >= 70:
+grade = "A"
+elif average >= 60:
+grade = "B"
+elif average >= 50:
+grade = "C"
+elif average >= 45:
+grade = "D"
+else:
+grade = "F"
+
+print("Name:", name)
+print("Average:", average)
+print("Grade:", grade)
+
+if name in top_students:
+print("Student is in the top students list")
+else:
+print("Student is not in the top students list")
